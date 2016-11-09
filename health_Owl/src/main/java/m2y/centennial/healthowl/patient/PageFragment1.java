@@ -10,6 +10,7 @@ import android.widget.TextView;
 import m2y.centennial.healthowl.R;
 
 /*M2Y*/
+/*test comment for commit*/
 public class PageFragment1 extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
