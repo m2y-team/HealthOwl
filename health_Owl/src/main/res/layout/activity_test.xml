@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="m2y.centennial.healthowl.test.TestMainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="57dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/toolbar_Test"
+        android:elevation="0dp" />
+
+    <TextView
+        android:text="Patient's ID:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/textView2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_below="@+id/toolbar_Test"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/editText_PatientID"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:hint="Patient's OHIP Number"
+        style="@style/Widget.AppCompat.EditText"
+        android:singleLine="true"
+        android:selectAllOnFocus="true"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:text="Tests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/testView_test"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/editText_PatientID"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listView_Patients" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@android:drawable/ic_search_category_default"
+        android:id="@+id/iButton_Search"
+        android:visibility="visible"
+        android:scaleType="fitCenter"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

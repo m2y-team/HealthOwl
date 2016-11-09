@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="m2y.centennial.healthowl.menu">
+
+    <Button
+        android:text="Groups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/GroupsButton"
+        android:layout_marginTop="18dp"
+        android:textSize="16sp" android:background="#b232b0"
+        android:textColor="@android:color/background_light" android:height="150dp"
+        android:width="150dp" android:layout_below="@+id/patientsButton"
+        android:layout_alignStart="@+id/patientsButton"
+        android:layout_alignEnd="@+id/patientsButton"/>
+    <Button
+        android:text="Appointments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appointmentsButton"
+        android:textSize="16sp" android:background="#fec54a"
+        android:textColor="@android:color/background_light" android:height="150dp"
+        android:width="150dp"
+        android:layout_marginEnd="15dp" android:layout_alignBaseline="@+id/patientsButton"
+        android:layout_alignBottom="@+id/patientsButton" android:layout_alignParentEnd="true"/>
+    <Button
+        android:text="Tests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/testsButton"
+        android:textSize="16sp" android:background="#26c6da"
+        android:textColor="@android:color/background_light" android:height="150dp"
+        android:width="150dp"
+        android:layout_alignTop="@+id/GroupsButton" android:layout_alignStart="@+id/appointmentsButton"/>
+    <Button
+        android:text="Patients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/patientsButton"
+        android:textSize="16sp" android:background="@color/colorPrimary"
+        android:textColor="@android:color/background_light" android:height="150dp"
+        android:width="150dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="14dp"
+        android:layout_alignParentTop="true" android:layout_toStartOf="@+id/testsButton"/>
+</RelativeLayout>

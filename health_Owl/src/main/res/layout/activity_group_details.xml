@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_group_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="m2y.centennial.healthowl.groups.GroupDetails">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#b232b0"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/toolbar2" />
+
+    <TextView
+        android:text="Group Details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView30"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Group ID: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar2"
+        android:layout_toStartOf="@+id/textView30"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView31"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:text="ID"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView31"
+        android:layout_marginStart="14dp"
+        android:id="@+id/textView32"
+        android:layout_alignEnd="@+id/floatingActionButton2"
+        android:layout_width="260dp" />
+
+    <TextView
+        android:text="Group Name: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textView33"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_below="@+id/textView31"
+        android:layout_alignStart="@+id/textView31" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/textView32"
+        android:layout_alignEnd="@+id/textView32"
+        android:id="@+id/editText"
+        android:layout_width="240dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:hint="Group Name" />
+
+    <TextView
+        android:text="Abbrivation: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView34"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/textView33"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:id="@+id/editText2"
+        android:layout_width="245dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:hint="Abbrivation" />
+
+    <TextView
+        android:text="Number of members:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/textView35"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_below="@+id/editText2"
+        android:layout_alignStart="@+id/textView34" />
+
+    <TextView
+        android:text="#"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView36"
+        android:layout_alignBaseline="@+id/textView35"
+        android:layout_alignBottom="@+id/textView35"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_width="190dp" />
+
+    <TextView
+        android:text="List of members:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView35"
+        android:layout_alignStart="@+id/textView35"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView37"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/textView37"
+        android:layout_alignStart="@+id/textView37"
+        android:layout_marginTop="15dp"
+        android:id="@+id/listView_Patients"
+        android:layout_height="240dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/btn_dialog"
+        android:layout_alignTop="@+id/floatingActionButton3"
+        android:layout_toEndOf="@+id/textView34"
+        android:id="@+id/floatingActionButton4"
+        app:backgroundTint="#b232b0" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        android:layout_marginEnd="13dp"
+        android:id="@+id/floatingActionButton2"
+        app:backgroundTint="#b232b0"
+        android:layout_alignBottom="@+id/textView30"
+        android:layout_alignParentEnd="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/add_button"
+        android:id="@+id/floatingActionButton3"
+        app:backgroundTint="#b232b0"
+        android:layout_marginEnd="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/textView30" />
+</RelativeLayout>
