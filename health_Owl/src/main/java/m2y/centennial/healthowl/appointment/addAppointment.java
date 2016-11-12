@@ -18,6 +18,7 @@ import java.util.Calendar;
 
 import m2y.centennial.healthowl.R;
 
+<<<<<<< HEAD
 public class AddAppointment extends AppCompatActivity implements View.OnClickListener{
 
     Button datePicker, btnTimePicker, btnDatePicker;
@@ -26,6 +27,10 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
     static final int Dialog_ID = 0;
     EditText txtDate, txtTime;
     private int mHour, mMinute, mYear, mMonth, mDay;
+=======
+/*M2Y*/
+public class AddAppointment extends AppCompatActivity {
+>>>>>>> b02f984... Appointments - Expandable view with navigation on detail page & add new appointment page, plus toolbar functionality
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
