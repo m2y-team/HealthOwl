@@ -8,7 +8,6 @@ import android.view.View;
 
 import m2y.centennial.healthowl.R;
 
-/*M2Y*/
 public class AddAppointment extends AppCompatActivity {
 
     @Override
