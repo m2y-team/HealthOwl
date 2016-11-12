@@ -9,7 +9,7 @@ import android.view.View;
 import m2y.centennial.healthowl.R;
 
 /*M2Y*/
-public class addAppointment extends AppCompatActivity {
+public class AddAppointment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

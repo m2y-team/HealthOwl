@@ -70,7 +70,7 @@
         </activity>
 
         <activity
-            android:name=".appointment.addAppointment"
+            android:name=".appointment.AddAppointment"
             android:parentActivityName=".appointment.MainAppointments">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
