@@ -48,10 +48,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-            <TextView
-                android:text="Date/Time"
+            <Button
+                android:text="Pick Date"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/date_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date_textview"
+                android:text="@string/selected_date" />
 
             <EditText
                 android:layout_width="wrap_content"
