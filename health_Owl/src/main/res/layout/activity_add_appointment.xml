@@ -47,25 +47,36 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
-
             <Button
-                android:text="Pick Date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/date_button" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/date_textview"
-                android:text="@string/selected_date" />
+                android:text="SELECT DATE"
+                android:id="@+id/btn_date" />
 
             <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/in_date"
+                android:hint="select date" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="time|datetime"
-                android:ems="10"
-                android:id="@+id/date_time" />
+                android:text="SELECT TIME"
+                android:id="@+id/btn_time" />
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/in_time"
+                android:hint="Select Time" />
 
 
         </TableRow>
@@ -108,8 +119,15 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/textComments"
             android:layout_weight="1"
-            android:hint="Enter any specification..." />
+            android:hint="Enter any description needed." />
+
     </LinearLayout>
+
+    <Button
+        android:text="Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnsave" />
 </LinearLayout>
