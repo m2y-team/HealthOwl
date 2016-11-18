@@ -25,4 +25,5 @@
         completions."
     </string>
     <string name="view">View</string>
+    <string name="selected_date">The date you picked will be shown here.</string>
 </resources>
