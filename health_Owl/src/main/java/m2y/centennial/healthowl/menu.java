@@ -1,15 +1,18 @@
 package m2y.centennial.healthowl;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import m2y.centennial.healthowl.appointment.MainAppointments;
 import m2y.centennial.healthowl.groups.GroupMainActivity;
 import m2y.centennial.healthowl.patient.patientList;
-import m2y.centennial.healthowl.test.TestMainActivity;
 
 /*M2Y*/
 public class menu extends AppCompatActivity {
@@ -17,12 +20,15 @@ public class menu extends AppCompatActivity {
     private Button mPatient;
     private Button mAppointment;
     private Button mGroup;
-    private Button mTest;
+    Toolbar myToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        // Initialize toolbar
+        initToolBar();
 
         mPatient = (Button) findViewById(R.id.patientsButton);
         mPatient.setOnClickListener(new View.OnClickListener() {
@@ -53,15 +59,6 @@ public class menu extends AppCompatActivity {
             }
         });
 
-        mTest = (Button) findViewById(R.id.testsButton);
-        mTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String testChoice = "test";
-                goTest(testChoice);
-
-            }
-        });
 
     }
 
@@ -83,9 +80,32 @@ public class menu extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void goTest(String testChoice){
-        Intent intent = new Intent(this, TestMainActivity.class);
-        intent.putExtra("testChoice", testChoice);
-        startActivity(intent);
+    //Setting up toolbar
+    public void initToolBar() {
+        myToolbar = (Toolbar)findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setTitle("Health Owl");
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+                case R.id.settings:
+                Intent myIntent = new Intent(Intent.ACTION_VIEW);
+                myIntent.setData(Uri.parse(""));
+                startActivity(myIntent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }

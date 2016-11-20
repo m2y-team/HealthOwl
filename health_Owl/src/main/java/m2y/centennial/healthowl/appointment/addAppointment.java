@@ -8,7 +8,7 @@ import android.view.View;
 
 import m2y.centennial.healthowl.R;
 
-public class AddAppointment extends AppCompatActivity {
+public class AddAppointment extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,4 @@ public class AddAppointment extends AppCompatActivity {
 
     }
 
-
-//    public void showTimePickerDialog(View v) {
-//        DialogFragment newFragment = new TimePickerFragment();
-//        newFragment.show(getSupportFragmentManager(), "timePicker");
-//    }
 }

@@ -25,4 +25,5 @@
         completions."
     </string>
     <string name="view">View</string>
+    <string name="log_out">Log Out</string>
 </resources>
