@@ -14,17 +14,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
         </activity>
+
         <activity android:name=".menu">
         </activity>
+
         <activity
             android:name=".patient.patientList"
             android:parentActivityName=".menu">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
             <meta-data
                 android:name="android.support.ParentACTIVITY"
                 android:value=".menu"/>
         </activity>
+
         <activity
             android:name=".patient.patientMain"
             android:parentActivityName=".patient.patientList">
@@ -32,22 +43,20 @@
                 android:name="android.support.ParentACTIVITY"
                 android:value=".patientList"/>
         </activity>
+
         <activity android:name=".patient.PatientFragmentAdapter">
         </activity>
-        <activity android:name=".Login">
 
+        <activity android:name=".Login">
         </activity>
+
         <activity android:name=".appointment.AppointmentTabs">
         </activity>
 
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
         <activity android:name=".groups.GroupMainActivity" />
@@ -56,11 +65,6 @@
         <activity android:name=".groups.GroupDetails">
         </activity>
 
-        <activity android:name=".test.TestAdd">
-        </activity>
-
-        <activity android:name=".test.TestDetails">
-        </activity>
 
         <activity
             android:name=".appointment.MainAppointments"
@@ -78,13 +82,7 @@
                 android:value=".appointment.MainAppointments" />
         </activity>
 
-        <activity
-            android:name=".test.TestMainActivity"
-            android:parentActivityName=".menu">
-            <meta-data
-                android:name="android.support.ParentACTIVITY"
-                android:value=".menu"/>
-        </activity>
+
     </application>
 
 </manifest>

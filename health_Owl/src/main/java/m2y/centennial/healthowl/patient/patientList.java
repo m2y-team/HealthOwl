@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import m2y.centennial.healthowl.HttpHandler;
 import m2y.centennial.healthowl.R;
@@ -31,7 +32,8 @@ import m2y.centennial.healthowl.R;
 /*M2Y*/
 public class patientList extends AppCompatActivity {
 
-    private String TAG = patientList.class.getSimpleName();
+    public static final String TAG = patientList.class.getSimpleName();
+    //public final class Log;
     private ProgressDialog pDialog;
     ListView lv;
 
@@ -39,6 +41,7 @@ public class patientList extends AppCompatActivity {
     private static String url = "https://m2y-healthowl.herokuapp.com/patients";
 
     ArrayList<HashMap<String, String>> contactList;
+    ArrayList<HashMap<String, String>> nameList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,63 +56,12 @@ public class patientList extends AppCompatActivity {
         getSupportActionBar().setTitle("Patients");
 
         contactList = new ArrayList<>();
+        nameList = new ArrayList<>();
 
         // Get ListView object from xml
         lv = (ListView) findViewById(R.id.list);
 
         new GetContacts().execute();
-
-        /*
-        String[] values = new String[] {
-                "John Dorian",
-                "Elliot Reid",
-                "Christopher Turk",
-                "Perry Cox",
-                "Bob Kelso",
-                "Todd Quinlan",
-                "Ted Buckland",
-                "Laverne Roberts",
-                "Jordan Sullivan",
-                "Carla Espinosa",
-                "Kim Briggs"
-        };
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_2, android.R.id.text1, values);
-
-        // Assign adapter to ListView
-        lv.setAdapter(adapter);
-        // ListView Item Click Listener
-
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // TODO Auto-generated method stub
-                // ListView Clicked item index
-                int itemPosition = position;
-
-                // ListView Clicked item value
-                String itemValue = (String) lv.getItemAtPosition(position);
-
-                // Show Alert
-                Toast.makeText(getApplicationContext(),
-                        "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
-                        .show();
-
-                goNext(itemValue);
-
-            }
-
-            private void goNext(String patientChoice){
-                Intent intent = new Intent(this, patientMain.class);
-                intent.putExtra("patientChoice", patientChoice);
-                startActivity(intent);
-            }
-
-        });
-*/
 
     }
 
@@ -146,9 +98,6 @@ public class patientList extends AppCompatActivity {
                         //JSONObject jsonObj = new JSONObject(jsonStr);
                         JSONArray contacts = new JSONArray(jsonStr);
 
-                        // Getting JSON Array node
-                        //JSONArray contacts = jsonObj.getJSONArray("contacts");
-
                         // looping through All Contacts
                         for (int i = 0; i < contacts.length(); i++) {
                             JSONObject c = contacts.getJSONObject(i);
@@ -161,6 +110,7 @@ public class patientList extends AppCompatActivity {
 
                             // tmp hash map for single contact
                             HashMap<String, String> contact = new HashMap<>();
+                            HashMap<String, String> contact_name = new HashMap<>();
 
                             // adding each child node to HashMap key => value
                             contact.put("id", id);
@@ -169,8 +119,12 @@ public class patientList extends AppCompatActivity {
                             contact.put("name", name);
                             contact.put("department", department);
 
+                            contact_name.put("id", id);
+                            contact_name.put("name", name);
+
                             // adding contact to contact list
                             contactList.add(contact);
+                            nameList.add(contact_name);
                         }
                     } catch (final JSONException e) {
                         Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -218,10 +172,46 @@ public class patientList extends AppCompatActivity {
                         R.id.department});
 
                 lv.setAdapter(adapter);
+
+
+                //get to work onClickListener
+
+
+
+                // ListView Item Click Listener
+
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        // TODO Auto-generated method stub
+                        // ListView Clicked item index
+                        int itemPosition = position;
+
+                        Map<String, String> map = (Map<String, String>) lv.getItemAtPosition(position);
+
+                        // ListView Clicked item value
+                        //String itemValue = lv.getItemAtPosition(position).toString();
+                        String itemValue = (String) map.get("name");
+
+                        // Show Alert
+                        Toast.makeText(getApplicationContext(),
+                                "Position :"+itemPosition+"  ListItem : " +"itemValue", Toast.LENGTH_LONG)
+                                .show();
+                        Log.i(TAG, "****************************");
+                        goNext(itemValue);
+
+                    }
+
+                    private void goNext(String patientChoice){
+                        Intent intent = new Intent(patientList.this, patientMain.class);
+                        intent.putExtra("patientChoice", patientChoice);
+                        startActivity(intent);
+                    }
+
+                });
+
             }
         }
-
-
-
 
 }
