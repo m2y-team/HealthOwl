@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -19,18 +20,15 @@
         </activity>
 
         <activity android:name=".menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
 
         <activity
             android:name=".patient.patientList"
             android:parentActivityName=".menu">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-
             <meta-data
                 android:name="android.support.ParentACTIVITY"
                 android:value=".menu"/>
@@ -44,25 +42,15 @@
                 android:value=".patientList"/>
         </activity>
 
-        <activity android:name=".patient.PatientFragmentAdapter">
+        <activity
+            android:name=".patient.MainAddPatient"
+            android:parentActivityName=".patient.patientList">
         </activity>
 
         <activity android:name=".Login">
         </activity>
 
         <activity android:name=".appointment.AppointmentTabs">
-        </activity>
-
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
-
-        </activity>
-
-        <activity android:name=".groups.GroupMainActivity" />
-        <activity android:name=".groups.GroupAdd" />
-
-        <activity android:name=".groups.GroupDetails">
         </activity>
 
 
@@ -80,6 +68,18 @@
             <meta-data
                 android:name="android.support.ParentACTIVITY"
                 android:value=".appointment.MainAppointments" />
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+
+        </activity>
+
+        <activity android:name=".groups.GroupMainActivity" />
+        <activity android:name=".groups.GroupAdd" />
+
+        <activity android:name=".groups.GroupDetails">
         </activity>
 
 

@@ -1,20 +1,19 @@
 package m2y.centennial.healthowl.patient;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
-
-import android.app.ProgressDialog;
-import android.os.AsyncTask;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,14 +27,14 @@ import m2y.centennial.healthowl.HttpHandler;
 import m2y.centennial.healthowl.R;
 
 
-
 /*M2Y*/
 public class patientList extends AppCompatActivity {
 
     public static final String TAG = patientList.class.getSimpleName();
-    //public final class Log;
     private ProgressDialog pDialog;
     ListView lv;
+
+    private FloatingActionButton mAddPatient;
 
     // URL to get contacts JSON
     private static String url = "https://m2y-healthowl.herokuapp.com/patients";
@@ -47,6 +46,8 @@ public class patientList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_list);
+
+        mAddPatient = (FloatingActionButton)findViewById(R.id.add_patient_button);
 
         //Set up Menu with back button
         Toolbar myDetailsToolbar = (Toolbar)findViewById(R.id.patientToolBar);
@@ -63,8 +64,15 @@ public class patientList extends AppCompatActivity {
 
         new GetContacts().execute();
 
-    }
+        mAddPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String passValue = "add";
+                addPatientStart(passValue);
+            }
+        });
 
+    }
 
 
         /**
@@ -213,5 +221,11 @@ public class patientList extends AppCompatActivity {
 
             }
         }
+
+    private void addPatientStart(String pass){
+        Intent intent = new Intent(this, MainAddPatient.class);
+        intent.putExtra("pass", pass);
+        startActivity(intent);
+    }
 
 }
