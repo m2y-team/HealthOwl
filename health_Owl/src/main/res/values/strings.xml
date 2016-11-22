@@ -8,6 +8,12 @@
     <string name="title_activity_appointment_tabs">AppointmentTabs</string>
     <string name="action_settings">Settings</string>
 
+    <string name="err_msg_fname">Enter your first name</string>
+    <string name="err_msg_lname">Enter valid last name</string>
+    <string name="err_msg_ohip">Enter the insurance number</string>
+    <string name="err_msg_phone">Enter valid phone number</string>
+    <string name="err_msg_address">Enter the address</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">Sign in</string>

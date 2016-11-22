@@ -47,6 +47,11 @@
             android:parentActivityName=".patient.patientList">
         </activity>
 
+        <activity
+            android:name=".patient.MainAddPatient1"
+            android:parentActivityName=".patient.patientList">
+        </activity>
+
         <activity android:name=".Login">
         </activity>
 

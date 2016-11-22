@@ -223,7 +223,7 @@ public class patientList extends AppCompatActivity {
         }
 
     private void addPatientStart(String pass){
-        Intent intent = new Intent(this, MainAddPatient.class);
+        Intent intent = new Intent(this, MainAddPatient1.class);
         intent.putExtra("pass", pass);
         startActivity(intent);
     }
