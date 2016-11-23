@@ -129,5 +129,9 @@
         android:text="Save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnsave" />
+        android:id="@+id/btnsave"
+        android:background="#904693"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
 </LinearLayout>

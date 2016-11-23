@@ -41,18 +41,21 @@
         android:id="@+id/my_appointment_toolbar"
         />
 
-    <ExpandableListView
-        android:id="@+id/lvExp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:cacheColorHint="#904693"/>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <include layout="@layout/content_main" />
 
-    <ImageButton
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addAppointment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/addAppointment"
-        android:layout_gravity="right"
-        android:src="@drawable/add_button" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_add_white_24dp" />
+
+
 
 </LinearLayout>
 
