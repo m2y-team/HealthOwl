@@ -28,19 +28,17 @@
                   android:orientation="vertical"
                   android:paddingLeft="30dp"
                   android:paddingRight="30dp"
-                  android:paddingTop="10dp">
+                  android:paddingTop="20dp"
+                  android:paddingBottom="20dp"
+                  android:background="?attr/colorButtonNormal">
 
-        <TextView
-            android:id="@+id/tvIsConnected"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="#FF0000"
-            android:textColor="#FFF"
-            android:textSize="18dp"
-            android:layout_marginBottom="30dp"
-            android:text="is connected?" />
-
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="30dp"
+                      android:paddingRight="30dp"
+                      android:paddingTop="30dp"
+                      android:background="@android:color/background_light">
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_first_name"
@@ -116,17 +114,17 @@
                 android:inputType="textPostalAddress"/>
         </android.support.design.widget.TextInputLayout>
 
-        <Button
-            android:id="@+id/btnProceed1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_alignParentBottom="true"
-            android:text="Proceed"
-            android:background="@color/colorPrimary"
-            android:layout_marginTop="40dp"
-            android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/btnProceed1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Proceed"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="40dp"
+                android:textColor="@android:color/white"/>
 
+        </LinearLayout>
     </LinearLayout>
 
 

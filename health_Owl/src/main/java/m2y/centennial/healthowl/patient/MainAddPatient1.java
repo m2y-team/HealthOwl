@@ -1,5 +1,6 @@
 package m2y.centennial.healthowl.patient;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import m2y.centennial.healthowl.R;
 
@@ -23,6 +24,7 @@ public class MainAddPatient1 extends AppCompatActivity {
     private EditText inputFName, inputLN, inputAddress, inputOhip, inputPhone;
     private TextInputLayout inputLayoutFName, inputLayoutLName, inputLayoutPhone, inputLayoutOhip, inputLayoutAddress;
     private Button btnProceed;
+    private ProgressBar tvIsConnected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +38,26 @@ public class MainAddPatient1 extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Add New Patient (1/2)");
 
+        // check if you are connected or not
+        /*tvIsConnected = (ProgressBar) findViewById(R.id.tvIsConnected);
+
+        if(isConnected()){
+            tvIsConnected.setBackgroundColor(0xFF00CC00);
+        }*/
+
+        btnProceed = (Button)findViewById(R.id.btnProceed1);
+
         inputLayoutFName = (TextInputLayout)findViewById(R.id.input_layout_first_name);
         inputLayoutLName = (TextInputLayout)findViewById(R.id.input_layout_last_name);
         inputLayoutPhone = (TextInputLayout)findViewById(R.id.input_layout_cellphone);
         inputLayoutOhip = (TextInputLayout)findViewById(R.id.input_layout_ohip);
         inputLayoutAddress = (TextInputLayout)findViewById(R.id.input_layout_address);
+
         inputFName = (EditText)findViewById(R.id.etFirstName);
         inputLN = (EditText)findViewById(R.id.etLastName);
         inputAddress = (EditText)findViewById(R.id.etAddress);
         inputOhip = (EditText)findViewById(R.id.etOhip);
         inputPhone = (EditText)findViewById(R.id.etCellphone);
-        btnProceed = (Button)findViewById(R.id.btnProceed1);
 
         inputFName.addTextChangedListener(new MyTextWatcher(inputFName));
         inputLN.addTextChangedListener(new MyTextWatcher(inputLN));
@@ -57,13 +68,23 @@ public class MainAddPatient1 extends AppCompatActivity {
         btnProceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                proceedForm();
+                validateForm();
             }
         });
     }
 
+    /*
+    public boolean isConnected(){
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Activity.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected())
+            return true;
+        else
+            return false;
+    }
+*/
 
-    private void proceedForm() {
+    private void validateForm() {
         if (!validateFName()) {
             return;}
 
@@ -79,7 +100,14 @@ public class MainAddPatient1 extends AppCompatActivity {
         if (!validateAddress()) {
             return;}
 
-        Toast.makeText(getApplicationContext(), "Now pass intent with all values", Toast.LENGTH_SHORT).show();
+        String fName = inputFName.getText().toString();
+        String lName = inputLN.getText().toString();
+        String phone = inputPhone.getText().toString();
+        String address = inputAddress.getText().toString();
+        String ohip = inputOhip.getText().toString();
+
+        //Toast.makeText(getApplicationContext(), fName+" "+lName+" "+phone+" "+address+" ", Toast.LENGTH_SHORT).show();
+        proceedForm(fName, lName, phone, address, ohip);
     }
 
     //Validation
@@ -116,7 +144,6 @@ public class MainAddPatient1 extends AppCompatActivity {
         }
         return true;
     }
-
 
     private boolean validateOhip() {
         if (inputOhip.getText().toString().trim().isEmpty()) {
@@ -187,8 +214,14 @@ public class MainAddPatient1 extends AppCompatActivity {
         }
     }
 
-
-
-
+private void proceedForm(String fName, String lName, String phone, String address, String ohip){
+    Intent intent = new Intent(this, MainAddPatient2.class);
+    intent.putExtra("fName", fName);
+    intent.putExtra("lName", lName);
+    intent.putExtra("phone", phone);
+    intent.putExtra("address", address);
+    intent.putExtra("ohip", ohip);
+    startActivity(intent);
+}
 
 }

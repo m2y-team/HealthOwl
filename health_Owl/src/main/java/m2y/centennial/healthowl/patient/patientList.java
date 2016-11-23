@@ -114,7 +114,7 @@ public class patientList extends AppCompatActivity {
                             String firstName = c.getString("firstName");
                             String lastName = c.getString("lastName");
                             String name = firstName + " " + lastName;
-                            String department = c.getString("department");
+                            String gender = c.getString("gender");
 
                             // tmp hash map for single contact
                             HashMap<String, String> contact = new HashMap<>();
@@ -125,7 +125,7 @@ public class patientList extends AppCompatActivity {
                             contact.put("firstName", firstName);
                             contact.put("lastName", lastName);
                             contact.put("name", name);
-                            contact.put("department", department);
+                            contact.put("gender", gender);
 
                             contact_name.put("id", id);
                             contact_name.put("name", name);
@@ -175,7 +175,7 @@ public class patientList extends AppCompatActivity {
                  * */
                 ListAdapter adapter = new SimpleAdapter(
                         patientList.this, contactList,
-                        R.layout.list_patient_entry, new String[]{"name", "department"
+                        R.layout.list_patient_entry, new String[]{"name", "gender"
                         }, new int[]{R.id.name,
                         R.id.department});
 

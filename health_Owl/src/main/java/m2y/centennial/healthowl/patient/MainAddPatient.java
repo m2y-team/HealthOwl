@@ -54,7 +54,6 @@ public class MainAddPatient extends Activity implements OnClickListener{
         etName = (EditText) findViewById(R.id.etName);
         etCountry = (EditText) findViewById(R.id.etCountry);
         etTwitter = (EditText) findViewById(R.id.etTwitter);
-        btnPost = (Button) findViewById(R.id.btnPost);
 
 
  /*
@@ -105,9 +104,9 @@ public class MainAddPatient extends Activity implements OnClickListener{
 
             // 3. build jsonObject
             JSONObject jsonObject = new JSONObject();
-            jsonObject.accumulate("name", person.getPatientName());
+            /*jsonObject.accumulate("name", person.getPatientName());
             jsonObject.accumulate("country", person.getCountry());
-            jsonObject.accumulate("twitter", person.getTwitter());
+            jsonObject.accumulate("twitter", person.getTwitter());*/
 
             // 4. convert JSONObject to JSON to String
             json = jsonObject.toString();
@@ -184,9 +183,9 @@ public class MainAddPatient extends Activity implements OnClickListener{
         protected String doInBackground(String... urls) {
 
             person = new patientModel();
-            person.setPatientName(addName);
+            /*person.setPatientName(addName);
             person.setCountry(addCountry);
-            person.setTwitter(addTwitter);
+            person.setTwitter(addTwitter);*/
 
             return POST(urls[0],person);
         }
