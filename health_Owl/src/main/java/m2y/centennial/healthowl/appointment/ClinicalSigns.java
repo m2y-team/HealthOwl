@@ -15,7 +15,7 @@ import m2y.centennial.healthowl.R;
  */
 public class ClinicalSigns extends Fragment {
 
-    EditText reasonForVisit, temperature, bloodPressure, heartRate;
+    public static EditText reasonForVisit, temperature, bloodPressure, heartRate;
     public ClinicalSigns() {
         // Required empty public constructor
     }

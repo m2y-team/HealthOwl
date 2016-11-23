@@ -17,6 +17,17 @@
         android:minHeight="?attr/actionBarSize"
         android:id="@+id/addAppointmentToolbar" />
 
+    <TextView
+        android:id="@+id/IsConnected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#FF0000"
+        android:textColor="#FFF"
+        android:textSize="18dp"
+        android:layout_marginBottom="5dp"
+        android:text="is connected?" />
+
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Enter Patient Name"
+                android:hint="Enter Patient Name"
                 android:ems="10"
                 android:id="@+id/editPatientName" />
         </TableRow>

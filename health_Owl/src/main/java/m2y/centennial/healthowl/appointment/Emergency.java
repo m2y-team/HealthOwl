@@ -22,15 +22,15 @@ import m2y.centennial.healthowl.R;
 public class Emergency extends Fragment {
 
 
-    Switch switchButton;
-    Boolean emergency_state;
-    SeekBar levelOfPain;
+    public static Switch switchButton;
+    public static  Boolean emergency_state;
+    public static SeekBar levelOfPain;
     String switchOn = "Switch is ON";
     String switchOff = "Switch is OFF";
-    private RadioGroup radioDeptGroup;
-    private RadioButton radioDeptButton;
-    String deptSelected;
-    EditText areaOfPain;
+    public static RadioGroup radioDeptGroup;
+    public static RadioButton radioDeptButton;
+    public static String deptSelected;
+    public static EditText areaOfPain;
 
     public Emergency() {
         // Required empty public constructor
@@ -93,6 +93,7 @@ public class Emergency extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
+
 
 
 
