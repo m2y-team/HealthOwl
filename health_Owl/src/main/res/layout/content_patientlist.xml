@@ -18,7 +18,7 @@
         android:id="@+id/list"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_below="@+id/patientToolBar">
+        android:layout_below="@+id/toolbar3">
     </ListView>
 
 </RelativeLayout>

@@ -50,7 +50,7 @@ public class patientList extends AppCompatActivity {
         mAddPatient = (FloatingActionButton)findViewById(R.id.add_patient_button);
 
         //Set up Menu with back button
-        Toolbar myDetailsToolbar = (Toolbar)findViewById(R.id.patientToolBar);
+        Toolbar myDetailsToolbar = (Toolbar)findViewById(R.id.toolbar3);
         setSupportActionBar(myDetailsToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -158,7 +158,6 @@ public class patientList extends AppCompatActivity {
                                     .show();
                         }
                     });
-
                 }
 
                 return null;

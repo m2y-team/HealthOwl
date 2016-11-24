@@ -254,6 +254,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
                     Toast.makeText(getApplicationContext(), addFName+" "+addLName+" "+addPhone+" "+addAddress+" "+addOhip+" "+addGender+" "+addDob, Toast.LENGTH_SHORT).show();
                     //call AsynTask to perform network operation on separate thread
                     new MainAddPatient2.HttpAsyncTask().execute("https://m2y-healthowl.herokuapp.com/patients");
+                    proceedForm(addName);
                 }
         }
 
@@ -291,6 +292,12 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
 
         inputStream.close();
         return result;
+    }
+
+    private void proceedForm(String addName){
+        Intent intent = new Intent(this, MainAddPatient3.class);
+        intent.putExtra("name", addName);
+        startActivity(intent);
     }
 
 

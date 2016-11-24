@@ -20,7 +20,7 @@
         android:background="?attr/colorPrimary"
         app:layout_scrollFlags="scroll|enterAlways"
         android:minHeight="?attr/actionBarSize"
-        android:id="@+id/patientToolBar"
+        android:id="@+id/toolbar3"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>

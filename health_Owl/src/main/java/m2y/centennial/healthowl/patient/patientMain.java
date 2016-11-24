@@ -21,7 +21,7 @@ public class patientMain extends AppCompatActivity {
         mTitle = intent.getStringExtra("patientChoice");
 
         //Set up Menu with back button
-        Toolbar myPatientToolbar = (Toolbar)findViewById(R.id.patientToolBar);
+        Toolbar myPatientToolbar = (Toolbar)findViewById(R.id.toolbar3);
         setSupportActionBar(myPatientToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

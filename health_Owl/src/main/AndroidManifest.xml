@@ -18,18 +18,16 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".menu">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
+
         <activity
             android:name=".patient.patientList"
             android:parentActivityName=".menu">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
                 android:value=".menu"/>
+
         </activity>
         <activity
             android:name=".patient.patientMain"
@@ -38,6 +36,7 @@
                 android:name="android.support.ParentACTIVITY"
                 android:value=".patientList"/>
         </activity>
+
         <activity
             android:name=".patient.MainAddPatient"
             android:parentActivityName=".patient.patientList">
@@ -50,8 +49,13 @@
             android:name=".patient.MainAddPatient2"
             android:parentActivityName=".patient.MainAddPatient1">
         </activity>
-        <activity android:name=".Login">
+        <activity
+            android:name=".patient.MainAddPatient3"
+            android:parentActivityName=".patient.MainAddPatient2">
         </activity>
+
+
+
         <activity android:name=".appointment.AppointmentTabs">
         </activity>
         <activity
@@ -71,13 +75,18 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login">
         </activity>
         <activity android:name=".groups.GroupMainActivity"/>
         <activity android:name=".groups.GroupAdd"/>
         <activity android:name=".groups.GroupDetails">
         </activity>
-        <activity android:name=".patient.MainAddPatient3">
-        </activity>
+
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,28 +23,32 @@ public class GroupMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
 
+        //Set up Menu with back button
+        Toolbar myDetailsToolbar = (Toolbar)findViewById(R.id.toolbarGroup1);
+        setSupportActionBar(myDetailsToolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Groups");
 
-        addGroup = (FloatingActionButton) findViewById(R.id.faButton_AddGroup);
+
+        addGroup = (FloatingActionButton) findViewById(R.id.add_group_button);
         addGroup.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
             goToAddGroup("group");
             }
         });
 
-        listView_Groups = (ListView) findViewById(R.id.listView_Groups);
+        listView_Groups = (ListView) findViewById(R.id.list);
 
         // Defined Array values to show in ListView
-        String[] values = new String[]{ "Heart",
-                "Brain",
-                "Kidney",
-                "Eyes",
-                "Ear",
-                "Dental",
-                "Blood Pressure",
+        String[] values = new String[]{
+                "Cardiology",
+                "ENT",
+                "Neurology",
+                "Oncology",
+                "Nutrition and dietetics",
                 "Hepatitis",
-                "Cancer",
-                "HIV",
-
+                "Cancer"
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,

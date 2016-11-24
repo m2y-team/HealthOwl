@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/patientsButton"
         android:textSize="16sp"
-        android:background="@color/colorPrimary"
+        android:background="#103ffb"
         android:textColor="@android:color/background_light"
         android:height="150dp"
         android:width="300dp"
