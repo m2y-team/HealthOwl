@@ -42,12 +42,26 @@
         android:id="@+id/my_appointment_toolbar"
         />
 
-    <ListView
-        android:id="@+id/list"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1.47" />
-    <include layout="@layout/content_main" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_weight="1.47"
+                android:layout_height="350dp" />
+
+            <include layout="@layout/content_main"
+                android:layout_width="match_parent"
+                android:layout_weight="1.47" />
+        </LinearLayout>
+    </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addAppointment"
@@ -57,7 +71,6 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_add_white_24dp"
         app:backgroundTint="#9C27B0" />
-
 
 
 </LinearLayout>
