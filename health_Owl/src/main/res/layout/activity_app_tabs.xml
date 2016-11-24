@@ -1,5 +1,6 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,7 +13,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/colorButtonNormal"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -21,7 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabMode="fixed"
-            app:tabGravity="fill"  />
+            app:tabGravity="fill"
+            android:background="#9C27B0"/>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager

@@ -36,7 +36,11 @@
         <activity android:name=".patient.PatientFragmentAdapter">
         </activity>
         <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".appointment.AppointmentTabs">
         </activity>
@@ -65,13 +69,13 @@
             <meta-data
                 android:name="android.support.ParentACTIVITY"
                 android:value=".menu" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
-        <activity android:name=".appointment.AppTabs">
+        <activity android:name=".appointment.AppTabs"
+            android:parentActivityName=".appointment.MainAppointments">
+            <meta-data
+                android:name="android.support.ParentACTIVITY"
+                android:value=".menu" />
 
         </activity>
 

@@ -30,9 +30,15 @@ public class AppTabs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_tabs);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Appointment Detail");
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);

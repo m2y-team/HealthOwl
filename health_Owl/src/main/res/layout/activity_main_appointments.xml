@@ -7,7 +7,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="m2y.centennial.healthowl.appointment.MainAppointments">
+    tools:context="m2y.centennial.healthowl.appointment.MainAppointments"
+    android:weightSum="1">
 
 
 
@@ -43,8 +44,9 @@
 
     <ListView
         android:id="@+id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.47" />
     <include layout="@layout/content_main" />
 
     <android.support.design.widget.FloatingActionButton
@@ -53,7 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_add_white_24dp" />
+        android:src="@drawable/ic_add_white_24dp"
+        app:backgroundTint="#9C27B0" />
 
 
 
