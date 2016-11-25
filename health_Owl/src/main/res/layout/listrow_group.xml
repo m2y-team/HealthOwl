@@ -1,11 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:clickable="true"
-    android:orientation="vertical"
-    android:paddingLeft="40dp"
-    tools:context=".MainActivity" >
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:clickable="true"
+              android:orientation="vertical"
+              android:paddingLeft="40dp"
+              tools:context=".MainActivity" tools:ignore="RtlHardcoded,RtlSymmetry">
 
     <TextView
         android:id="@+id/textView1"

@@ -46,7 +46,7 @@ tools:context="m2y.centennial.healthowl.patient.MainAddPatient3">
                   android:background="@android:color/background_light" android:paddingBottom="50dp">
 
             <TextView
-                android:text="Completed Successfully!"
+                android:text="@string/completed_successfully"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/post_success_view"
@@ -66,7 +66,7 @@ tools:context="m2y.centennial.healthowl.patient.MainAddPatient3">
                   android:layout_marginTop="30dp" android:paddingBottom="50dp">
 
         <TextView
-            android:text="Do you want to add a new appointment?"
+            android:text="@string/do_you_want_to_add_a_new_appointment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/next_action_view"
@@ -81,7 +81,7 @@ tools:context="m2y.centennial.healthowl.patient.MainAddPatient3">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Add new appointment"
+            android:text="@string/add_new_appointment"
             android:background="#fec54a"
             android:layout_marginTop="40dp"
             android:textColor="@android:color/white"/>
@@ -91,7 +91,7 @@ tools:context="m2y.centennial.healthowl.patient.MainAddPatient3">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Go to all patients"
+            android:text="@string/go_to_all_patients"
             android:background="@color/colorPrimary"
             android:layout_marginTop="30dp"
             android:textColor="@android:color/white"/>

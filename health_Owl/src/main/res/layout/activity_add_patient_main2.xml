@@ -54,7 +54,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:text="Birthday"
+                    android:text="@string/birthday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/birthday"
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="date"
                     android:id="@+id/dayInput"
-                    android:hint="Day"
+                    android:hint="@string/day"
                     android:textSize="@dimen/fab_margin"/>
 
                 </android.support.design.widget.TextInputLayout>
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:inputType="date"
                     android:id="@+id/yearInput"
-                    android:hint="Year"
+                    android:hint="@string/year"
 
                     android:textSize="@dimen/fab_margin"
                     />
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="Gender"
+                    android:text="@string/gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/gender"
@@ -132,7 +132,7 @@
 
 
                     <RadioButton
-                    android:text="Female"
+                    android:text="@string/female"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/radio_female"
@@ -141,7 +141,7 @@
                     />
 
                     <RadioButton
-                        android:text="Male"
+                        android:text="@string/male"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/radio_male"
@@ -157,7 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Submit"
+                android:text="@string/submit"
                 android:background="@color/colorPrimary"
                 android:layout_marginTop="40dp"
                 android:textColor="@android:color/white"/>

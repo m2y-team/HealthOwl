@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Reason for a visit" />
+                android:text="@string/reason_for_a_visit" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
                 android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/reasonForVisit"
-                android:hint="Enter Reason for a visit" />
+                android:hint="@string/enter_reason_for_a_visit" />
 
 
         </TableRow>
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textLevelOfPain"
-                android:text="Temperature" />
+                android:text="@string/temperature" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/temperature"
-                android:hint="In Fahrenheit" />
+                android:hint="@string/in_fahrenheit" />
 
         </TableRow>
 
@@ -67,7 +67,7 @@
             android:padding="2dp">
 
             <TextView
-                android:text="HeartbeatRate"
+                android:text="@string/heartbeatrate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3" />
@@ -79,7 +79,7 @@
                 android:ems="10"
                 android:id="@+id/heartRate"
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
-                android:hint="In BPM" />
+                android:hint="@string/in_bpm" />
 
         </TableRow>
 
@@ -90,7 +90,7 @@
             android:padding="2dp">
 
             <TextView
-                android:text="BloodPressure"
+                android:text="@string/bloodpressure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4" />
@@ -101,7 +101,7 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/bloodPressure"
-                android:hint="In mmHg" />
+                android:hint="@string/in_mmhg" />
 
 
         </TableRow>

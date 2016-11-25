@@ -20,17 +20,17 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
 
     <Button
-        android:text="@string/patients"
+        android:text="@string/groups"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/patientsButton"
+        android:id="@+id/GroupsButton"
         android:textSize="16sp"
-        android:background="#103ffb"
+        android:background="#b232b0"
         android:textColor="@android:color/background_light"
         android:height="150dp"
-        android:width="300dp"
-        android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
-        android:layout_marginBottom="111dp"/>
+        android:width="150dp" android:layout_below="@+id/my_toolbar"
+        android:layout_alignStart="@+id/patientsButton"
+        android:layout_marginTop="10dp"/>
     <Button
         android:text="@string/appointments"
         android:layout_width="wrap_content"
@@ -40,18 +40,18 @@
         android:background="#fec54a"
         android:textColor="@android:color/background_light"
         android:height="150dp"
-        android:width="150dp" android:layout_above="@+id/patientsButton"
-        android:layout_alignStart="@+id/patientsButton"/>
+        android:width="150dp" android:layout_alignBaseline="@+id/GroupsButton"
+        android:layout_alignBottom="@+id/GroupsButton" android:layout_toEndOf="@+id/GroupsButton"/>
     <Button
-        android:text="@string/groups"
+        android:text="@string/patients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/GroupsButton"
+        android:id="@+id/patientsButton"
         android:textSize="16sp"
-        android:background="#b232b0"
+        android:background="#103ffb"
         android:textColor="@android:color/background_light"
         android:height="150dp"
-        android:width="150dp" android:layout_alignBaseline="@+id/appointmentsButton"
-        android:layout_alignBottom="@+id/appointmentsButton"
-        android:layout_toEndOf="@+id/appointmentsButton"/>
+        android:width="300dp"
+        android:layout_below="@+id/GroupsButton" android:layout_centerHorizontal="true"
+        />
 </RelativeLayout>

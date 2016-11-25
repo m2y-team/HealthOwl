@@ -15,7 +15,7 @@
         android:textColor="#FFF"
         android:textSize="18dp"
         android:layout_marginBottom="5dp"
-        android:text="is connected?" />
+        android:text="@string/is_connected" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
             android:id="@+id/tvName"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@string/name"
             android:layout_alignBaseline="@+id/etName"/>
         <EditText
             android:id="@+id/etName"
@@ -37,7 +37,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvName"
-            android:text="Country"
+            android:text="@string/country"
             android:layout_alignBaseline="@+id/etCountry"/>
         <EditText
             android:id="@+id/etCountry"
@@ -50,7 +50,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCountry"
-            android:text="Twitter"
+            android:text="@string/twitter"
             android:layout_alignBaseline="@+id/etTwitter"/>
         <EditText
             android:id="@+id/etTwitter"
@@ -65,7 +65,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="POST"/>
+        android:text="@string/post"/>
 
 
 </LinearLayout>
