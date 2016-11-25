@@ -12,7 +12,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp">
+        android:gravity="center">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -22,17 +22,15 @@
 
             <TextView
                 android:id="@+id/textview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Emergency ?" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Emergency ?" />
 
             <Switch
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/switchEmergency"
-                android:checked="false"
-                android:gravity="start" />
+                android:id="@+id/switchButton1"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content" />
 
         </TableRow>
 
@@ -54,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:max="10"
                 android:progress="3"
-                android:id="@+id/seekBar" />
+                android:id="@+id/levelOfPain" />
 
         </TableRow>
 
@@ -93,17 +91,40 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4" />
 
-            <ListView
+            <RadioGroup
+                android:id="@+id/radiodepartments"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:entries="@string/action_settings" />
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:id="@+id/radioCardiology"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cardiology"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioDermatology"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dermatology" />
+
+                <RadioButton
+                    android:id="@+id/radioInfectious"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Infectious" />
+
+                <RadioButton
+                    android:id="@+id/radioPhysician"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Physician" />
+
+            </RadioGroup>
+
+
         </TableRow>
     </TableLayout>
-
-    <Button
-        android:text="Save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonSave" />
 
 </LinearLayout>

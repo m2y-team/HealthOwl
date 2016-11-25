@@ -25,8 +25,5 @@
         completions."
     </string>
     <string name="view">View</string>
-<<<<<<< HEAD
     <string name="selected_date">The date you picked will be shown here.</string>
-=======
->>>>>>> b02f984... Appointments - Expandable view with navigation on detail page & add new appointment page, plus toolbar functionality
 </resources>
