@@ -6,8 +6,10 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:allowBackup="true"
@@ -18,13 +20,21 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
         </activity>
+
         <activity
             android:name=".patient.patientList"
             android:parentActivityName=".menu">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
                 android:value=".menu"/>
+
+
         </activity>
         <activity
             android:name=".patient.patientMain"
@@ -33,44 +43,49 @@
                 android:name="android.support.ParentACTIVITY"
                 android:value=".patientList"/>
         </activity>
-        <activity android:name=".patient.PatientFragmentAdapter">
-        </activity>
-        <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".appointment.AppointmentTabs">
-        </activity>
 
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
+            android:name=".patient.MainAddPatient"
+            android:parentActivityName=".patient.patientList">
+            </activity>>
+
+        <activity android:name=".patient.PatientFragmentAdapter">
+        </activity>
+
+        <activity android:name=".Login">
 
         </activity>
 
-        <activity android:name=".groups.GroupMainActivity" />
-        <activity android:name=".groups.GroupAdd" />
 
-        <activity android:name=".groups.GroupDetails">
+        <activity
+            android:name=".patient.MainAddPatient1"
+            android:parentActivityName=".patient.patientList">
         </activity>
 
-        <activity android:name=".test.TestAdd">
+
+        <activity
+            android:name=".patient.MainAddPatient2"
+            android:parentActivityName=".patient.MainAddPatient1">
+
+        </activity>
+        <activity
+            android:name=".patient.MainAddPatient3"
+            android:parentActivityName=".patient.MainAddPatient2">
         </activity>
 
-        <activity android:name=".test.TestDetails">
-        </activity>
 
+
+        <activity android:name=".appointment.AppointmentTabs">
+        </activity>
         <activity
             android:name=".appointment.MainAppointments"
             android:parentActivityName=".menu">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
                 android:value=".menu" />
-
         </activity>
+
         <activity android:name=".appointment.AppTabs"
             android:parentActivityName=".appointment.MainAppointments">
             <meta-data
@@ -78,22 +93,28 @@
                 android:value=".menu" />
 
         </activity>
-
         <activity
             android:name=".appointment.AddAppointment"
             android:parentActivityName=".appointment.MainAppointments">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
-                android:value=".appointment.MainAppointments" />
+                android:value=".appointment.MainAppointments"/>
         </activity>
 
         <activity
-            android:name=".test.TestMainActivity"
-            android:parentActivityName=".menu">
-            <meta-data
-                android:name="android.support.ParentACTIVITY"
-                android:value=".menu"/>
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
+
+        <activity android:name=".groups.GroupMainActivity"/>
+        <activity android:name=".groups.GroupAdd"/>
+        <activity android:name=".groups.GroupDetails">
+        </activity>
+
     </application>
 
 </manifest>

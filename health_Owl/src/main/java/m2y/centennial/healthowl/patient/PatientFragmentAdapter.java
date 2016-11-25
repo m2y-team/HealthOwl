@@ -8,8 +8,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 /*M2Y*/
 public class PatientFragmentAdapter extends FragmentPagerAdapter {
 
-    final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[] { "Information", "Appointment", "Test" };
+    final int PAGE_COUNT = 2;
+    private String tabTitles[] = new String[] { "Information", "Appointments"};
     private Context context;
 
     public PatientFragmentAdapter(FragmentManager fm, Context context) {
@@ -24,7 +24,7 @@ public class PatientFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return PageFragment1.newInstance(position + 1);
+        return PageFragment.newInstance(position + 1);
     }
 
     @Override
