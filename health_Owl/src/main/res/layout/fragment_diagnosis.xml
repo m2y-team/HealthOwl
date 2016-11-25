@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:weightSum="1">
@@ -12,16 +12,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginLeft="16dp"></LinearLayout>
+        android:layout_marginLeft="16dp" tools:ignore="RtlHardcoded"></LinearLayout>
 
     <TextView
-        android:text="Doctor's Recommendation"
+        android:text="@string/doctor_s_recommendation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_marginLeft="16dp"
         android:layout_weight="0.07"
-        android:gravity="center" />
+        android:gravity="center" tools:ignore="RtlHardcoded"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -33,12 +33,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="16dp"
         android:layout_weight="0.44"
-        android:hint="Enter Diagonosis detail for a patient."
+        android:hint="@string/enter_diagonosis_detail_for_a_patient"
         android:isScrollContainer="true"
         android:gravity="top" />
 
     <Button
-        android:text="Save"
+        android:text="@string/save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/appDetailSave"
@@ -49,7 +49,7 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:text="Add new Appointment"
+        android:text="@string/add_new_appointment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnNewApp"

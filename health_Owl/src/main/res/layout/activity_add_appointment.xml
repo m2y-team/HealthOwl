@@ -64,7 +64,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Patient"
+                        android:text="@string/patient"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textPatient" />
@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
-                        android:hint="Enter Patient Name"
+                        android:hint="@string/enter_patient_name"
                         android:ems="10"
                         android:id="@+id/editPatientName" />
                 </TableRow>
@@ -83,7 +83,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:text="Insurance No"
+                        android:text="@string/insurance_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textOhip" />
@@ -92,7 +92,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="number"
-                        android:hint="Enter OHIP"
+                        android:hint="@string/enter_ohip"
                         android:ems="10"
                         android:id="@+id/editOhip" />
                 </TableRow>
@@ -103,14 +103,14 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SELECT DATE"
+                        android:text="@string/select_dateC"
                         android:id="@+id/btn_date" />
 
                     <EditText
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:id="@+id/in_date"
-                        android:hint="select date" />
+                        android:hint="@string/select_date" />
 
 
                 </TableRow>
@@ -122,14 +122,14 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SELECT TIME"
+                        android:text="@string/select_time"
                         android:id="@+id/btn_time" />
 
                     <EditText
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:id="@+id/in_time"
-                        android:hint="Select Time" />
+                        android:hint="@string/select_time" />
 
 
                 </TableRow>
@@ -138,7 +138,7 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:text="With"
+                        android:text="@string/with"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -147,7 +147,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textAutoComplete"
                         android:ems="10"
-                        android:hint="Dr/Nurse name"
+                        android:hint="@string/dr_nurse_name"
                         android:id="@+id/with" />
 
                 </TableRow>
@@ -161,7 +161,7 @@
 
 
                 <TextView
-                    android:text="Any Comments"
+                    android:text="@string/any_comments"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
@@ -174,13 +174,13 @@
                     android:ems="10"
                     android:id="@+id/textComments"
                     android:layout_weight="1"
-                    android:hint="Enter any description needed." />
+                    android:hint="@string/enter_any_description_needed" />
 
             </LinearLayout>
 
 
             <Button
-                android:text="Save"
+                android:text="@string/save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnsave"

@@ -15,7 +15,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/firstLayout">
 
 
@@ -25,7 +25,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:gravity="center">
+            android:gravity="center" tools:ignore="UselessParent">
 
             <TableRow
                 android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Emergency ?" />
+                    android:text="@string/emergencyF" />
 
                 <Switch
                     android:id="@+id/switchButton1"
@@ -56,7 +56,7 @@
                 android:padding="20dp">
 
                 <TextView
-                    android:text="Level of Pain"
+                    android:text="@string/level_of_painF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textLevelOfPain" />
@@ -78,7 +78,7 @@
                 android:padding="20dp">
 
                 <TextView
-                    android:text="Area of Pain"
+                    android:text="@string/area_of_painF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView3" />
@@ -90,7 +90,7 @@
                     android:ems="10"
                     android:id="@+id/editAreaOfPain"
                     style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:hint="Enter Area of Pain"
+                    android:hint="@string/enter_area_of_painF"
                     android:textColorLink="@android:color/holo_red_light"/>
 
             </TableRow>
@@ -98,11 +98,11 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="2dp"
+                android:layout_margin="20dp"
                 android:padding="2dp">
 
                 <TextView
-                    android:text="Department"
+                    android:text="@string/departmentF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView4" />
@@ -116,7 +116,7 @@
                         android:id="@+id/radioCardiology"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cardiology"
+                        android:text="@string/cardiologyF"
                         android:checked="true"
                         android:textColorLink="@android:color/holo_red_light"/>
 
@@ -124,21 +124,21 @@
                         android:id="@+id/radioDermatology"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Dermatology"
+                        android:text="@string/dermatologyF"
                         android:textColorLink="@android:color/holo_red_light"/>
 
                     <RadioButton
                         android:id="@+id/radioInfectious"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Infectious"
+                        android:text="@string/infectiousF"
                         android:textColorLink="@android:color/holo_red_light"/>
 
                     <RadioButton
                         android:id="@+id/radioPhysician"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Physician"
+                        android:text="@string/physicianField"
                         android:textColorLink="@android:color/holo_red_light"/>
 
                 </RadioGroup>

@@ -32,7 +32,7 @@
                     android:id="@+id/dobTV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="DOB" />
+                    android:text="@string/dob" />
 
                 <TextView
                     android:id="@+id/addDobTV"
@@ -59,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/genderTV"
-                    android:text="Gender"
+                    android:text="@string/gender"
                 />
 
                 <TextView
@@ -83,7 +83,7 @@
                 >
 
                 <TextView
-                    android:text="Insurance"
+                    android:text="@string/insurance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/insuranceTV"
@@ -110,7 +110,7 @@
             >
 
                 <TextView
-                    android:text="Phone No"
+                    android:text="@string/phone_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/phoneTV" />
@@ -137,7 +137,7 @@
                 >
 
                 <TextView
-                    android:text="Address"
+                    android:text="@string/address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/addressTv" />
