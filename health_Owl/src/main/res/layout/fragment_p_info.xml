@@ -36,13 +36,15 @@
 
                 <TextView
                     android:id="@+id/addDobTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
                     android:text=""
-                    android:textStyle="normal|bold"
-                    android:textSize="16sp" android:textAlignment="textEnd"
-                    android:textColor="?android:attr/textColorPrimary"/>
+                    android:paddingBottom="2dip"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_weight="1"/>
 
 
             </TableRow>
@@ -62,14 +64,15 @@
 
                 <TextView
                     android:id="@+id/addGenderTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
                     android:text=""
-                    android:textStyle="normal|bold"
-                    android:textSize="16sp" android:textAlignment="textEnd"
-                    android:textColor="?android:attr/textColorPrimary"/>
+                    android:paddingBottom="2dip"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_weight="1"/>
 
             </TableRow>
 
@@ -88,14 +91,15 @@
 
                 <TextView
                     android:id="@+id/addInsuranceTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text=""
-                    android:textStyle="normal|bold"
-                    android:textSize="16sp" android:textAlignment="textEnd"
-                    android:textColor="?android:attr/textColorPrimary"/>
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:paddingBottom="2dip"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_weight="1"/>
 
             </TableRow>
 
@@ -113,15 +117,15 @@
 
                 <TextView
                     android:id="@+id/addPhoneTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text=""
-                    android:textStyle="normal|bold"
-                    android:textSize="16sp"
-                    android:textAlignment="textEnd"
-                    android:textColor="?android:attr/textColorPrimary"/>
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:paddingBottom="2dip"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_weight="1"/>
 
 
             </TableRow>
@@ -139,21 +143,18 @@
                     android:id="@+id/addressTv" />
 
 
-
-
-
-
             </TableRow>
             <TextView
                 android:id="@+id/otherAddressTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:textSize="16sp"
+                android:gravity="center"
                 android:text=""
-                android:textStyle="normal|bold"
-                android:textAlignment="center"
-                android:textColor="?android:attr/textColorPrimary"/>
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="2dip"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_weight="1"/>
         </TableLayout>
 
     </LinearLayout>
