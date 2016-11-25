@@ -2,23 +2,28 @@ package m2y.centennial.healthowl.appointment;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,24 +32,23 @@ import java.io.InputStreamReader;
 import java.util.Calendar;
 
 import m2y.centennial.healthowl.R;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
+
+import static m2y.centennial.healthowl.R.id.tvIsConnected;
+
+/**
+ * M2Y
+ */
 
 public class AddAppointment extends AppCompatActivity implements View.OnClickListener{
 
-    Button  btnTimePicker, btnDatePicker, onSave;
+    Button btnTimePicker, btnDatePicker, onSave;
     int year_x,month_x,day_x;
     static final int Dialog_ID = 0;
-    EditText txtDate, txtTime, appName, withWhome, anyComments;
+    EditText txtDate, txtTime, appName, withWhome, anyComments, ohip;
     private int mHour, mMinute, mYear, mMonth, mDay;
     appointmentModel appointment;
-    TextView isConnected;
-    String appontmentName,setTime, setDate, comments ;
-
+    private ProgressBar mtvIsConnected;
+    String appontmentName,setTime, setDate, comments, insurance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,26 +67,23 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
         txtDate=(EditText)findViewById(R.id.in_date);
         txtTime=(EditText)findViewById(R.id.in_time);
         appName=(EditText)findViewById(R.id.editPatientName);
+        ohip=(EditText)findViewById(R.id.editOhip);
         withWhome = (EditText) findViewById(R.id.with);
         anyComments = (EditText) findViewById(R.id.textComments);
         onSave = (Button) findViewById(R.id.btnsave);
-        isConnected = (TextView) findViewById(R.id.IsConnected);
 
         btnDatePicker.setOnClickListener(this);
         btnTimePicker.setOnClickListener(this);
 
-        // check if you are connected or not
+        //Check network connection
+        mtvIsConnected = (ProgressBar)findViewById(tvIsConnected);
         if(isConnected()){
-            isConnected.setBackgroundColor(0xFF00CC00);
-            isConnected.setText("You are connected");
-        }
-        else{
-            isConnected.setText("You are NOT connected");
-        }
+            mtvIsConnected.setBackgroundColor(0xFF388E3C);}
 
         onSave.setOnClickListener(this);
 
     }
+
     public static String POST(String url, appointmentModel appointment){
         InputStream inputStream = null;
         String result = "";
@@ -100,6 +101,7 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
             JSONObject jsonObject = new JSONObject();
             jsonObject.accumulate("patientName", appointment.getmAppointmentName());
             jsonObject.accumulate("patientId", 1234);
+            jsonObject.accumulate("ohip", appointment.getOhip());
             jsonObject.accumulate("date", appointment.getmSetDate());
             jsonObject.accumulate("time", appointment.getmSetTime());
             jsonObject.accumulate("comments", appointment.getmComments());
@@ -209,6 +211,7 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
                 setDate = txtDate.getText().toString();
                 setTime = txtTime.getText().toString();
                 comments = anyComments.getText().toString();
+                insurance = ohip.getText().toString();
 
                 //call AsynTask to perform network operation on separate thread
                 new HttpAsyncTask().execute("https://m2y-healthowl.herokuapp.com/appointments");
@@ -222,6 +225,7 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
 
             appointment = new appointmentModel();
             appointment.setmAppointmentName(appontmentName);
+            appointment.setOhip(insurance);
             appointment.setmSetDate(setDate);
             appointment.setmSetTime(setTime);
             appointment.setmComments(comments);
@@ -235,6 +239,7 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
             txtDate.setText("");
             txtTime.setText("");
             appName.setText("");
+            ohip.setText("");
             withWhome.setText("");
             anyComments.setText("");
         }
@@ -260,4 +265,7 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
         return result;
 
     }
+
+
+
 }

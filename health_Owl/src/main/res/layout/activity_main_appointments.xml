@@ -1,55 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_patient_list"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="m2y.centennial.healthowl.appointment.MainAppointments">
+
+<android.support.design.widget.AppBarLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context="m2y.centennial.healthowl.appointment.MainAppointments"
-    android:weightSum="1">
-
-
-
-    <!--<TextView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Appointments"-->
-    <!--android:id="@+id/textView"-->
-    <!--android:layout_alignParentTop="true"-->
-    <!--android:layout_alignParentStart="true"-->
-    <!--android:autoText="true"-->
-    <!--android:textColor="#904693"-->
-    <!--android:textAlignment="center"-->
-    <!--android:textSize="20sp"></TextView>-->
-
-
-    <!--<android.support.v7.widget.Toolbar-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:theme="?attr/actionBarTheme"-->
-    <!--android:minHeight="?attr/actionBarSize"-->
-    <!--android:id="@+id/my_appointment_toolbar"-->
-    <!--android:background="?attr/colorButtonNormal" />-->
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/my_appointment_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorButtonNormal"
+        android:background="@android:color/holo_orange_light"
+        app:layout_scrollFlags="scroll|enterAlways"
         android:theme="?attr/actionBarTheme"
         android:minHeight="?attr/actionBarSize"
-        android:id="@+id/my_appointment_toolbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
+</android.support.design.widget.AppBarLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_marginTop="?attr/actionBarSize"
+                  android:orientation="vertical"
+                  android:paddingLeft="30dp"
+                  android:paddingRight="30dp"
+                  android:paddingTop="20dp"
+                  android:paddingBottom="20dp"
+                  android:background="?attr/colorButtonNormal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="5dp"
+                      android:paddingTop="5dp"
+                      android:background="@android:color/background_light">
 
             <ListView
                 android:id="@+id/list"
@@ -57,21 +52,18 @@
                 android:layout_weight="1.47"
                 android:layout_height="350dp" />
 
-            <include layout="@layout/content_main"
-                android:layout_width="match_parent"
-                android:layout_weight="1.47" />
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addAppointment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="bottom|right"
         android:src="@drawable/ic_add_white_24dp"
-        app:backgroundTint="#9C27B0" />
+        android:layout_marginRight="50dp" android:layout_marginBottom="40dp"/>
 
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
 

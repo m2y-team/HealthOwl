@@ -11,6 +11,16 @@ public class appointmentModel {
     private String mSetTime;
     private  String mComments;
 
+    public String getOhip() {
+        return mOhip;
+    }
+
+    public void setOhip(String ohip) {
+        mOhip = ohip;
+    }
+
+    private String mOhip;
+
     public String getmAppointmentName() {
         return mAppointmentName;
     }
