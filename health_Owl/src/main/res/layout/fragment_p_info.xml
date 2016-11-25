@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="m2y.centennial.healthowl.patient.Information"
+>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="30dp"
+        android:background="@android:color/background_light">
+
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                >
+
+                <TextView
+                    android:id="@+id/dobTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="DOB" />
+
+                <TextView
+                    android:id="@+id/addDobTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text=""
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" android:textAlignment="textEnd"
+                    android:textColor="?android:attr/textColorPrimary"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+            >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/genderTV"
+                    android:text="Gender"
+                />
+
+                <TextView
+                    android:id="@+id/addGenderTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" android:textAlignment="textEnd"
+                    android:textColor="?android:attr/textColorPrimary"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                >
+
+                <TextView
+                    android:text="Insurance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/insuranceTV"
+                />
+
+                <TextView
+                    android:id="@+id/addInsuranceTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp" android:textAlignment="textEnd"
+                    android:textColor="?android:attr/textColorPrimary"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+            >
+
+                <TextView
+                    android:text="Phone No"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/phoneTV" />
+
+                <TextView
+                    android:id="@+id/addPhoneTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="30dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textStyle="normal|bold"
+                    android:textSize="16sp"
+                    android:textAlignment="textEnd"
+                    android:textColor="?android:attr/textColorPrimary"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                >
+
+                <TextView
+                    android:text="Address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addressTv" />
+
+
+
+
+
+
+            </TableRow>
+            <TextView
+                android:id="@+id/otherAddressTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:text=""
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:textColor="?android:attr/textColorPrimary"/>
+        </TableLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -40,7 +40,6 @@ public class patientList extends AppCompatActivity {
     private static String url = "https://m2y-healthowl.herokuapp.com/patients";
 
     ArrayList<HashMap<String, String>> contactList;
-    ArrayList<HashMap<String, String>> nameList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +56,6 @@ public class patientList extends AppCompatActivity {
         getSupportActionBar().setTitle("Patients");
 
         contactList = new ArrayList<>();
-        nameList = new ArrayList<>();
 
         // Get ListView object from xml
         lv = (ListView) findViewById(R.id.list);
@@ -113,26 +111,33 @@ public class patientList extends AppCompatActivity {
                             String id = c.getString("_id");
                             String firstName = c.getString("firstName");
                             String lastName = c.getString("lastName");
+
                             String name = firstName + " " + lastName;
                             String gender = c.getString("gender");
+                            String dateOfBirth = c.getString("dateOfBirth");
+                            String healthInsuranceNumber = c.getString("healthInsuranceNumber");
+                            String cellPhoneNumber = c.getString("cellPhoneNumber");
+                            String address = c.getString("address");
+
 
                             // tmp hash map for single contact
                             HashMap<String, String> contact = new HashMap<>();
-                            HashMap<String, String> contact_name = new HashMap<>();
 
                             // adding each child node to HashMap key => value
                             contact.put("id", id);
                             contact.put("firstName", firstName);
                             contact.put("lastName", lastName);
+
                             contact.put("name", name);
                             contact.put("gender", gender);
+                            contact.put("healthInsuranceNumber", healthInsuranceNumber);
+                            contact.put("dateOfBirth", dateOfBirth);
+                            contact.put("cellPhoneNumber", cellPhoneNumber);
+                            contact.put("address", address);
 
-                            contact_name.put("id", id);
-                            contact_name.put("name", name);
 
                             // adding contact to contact list
                             contactList.add(contact);
-                            nameList.add(contact_name);
                         }
                     } catch (final JSONException e) {
                         Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -183,8 +188,6 @@ public class patientList extends AppCompatActivity {
 
                 //get to work onClickListener
 
-
-
                 // ListView Item Click Listener
 
                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -199,20 +202,32 @@ public class patientList extends AppCompatActivity {
 
                         // ListView Clicked item value
                         //String itemValue = lv.getItemAtPosition(position).toString();
-                        String itemValue = (String) map.get("name");
+                        String mName = (String) map.get("name");
+                        String mGender = (String) map.get("gender");
+                        String mPhone = (String) map.get("cellPhoneNumber");
+                        String mOhip = (String) map.get("healthInsuranceNumber");
+                        String mDob = (String) map.get("dateOfBirth");
+                        String mAddress = (String) map.get("address");
 
                         // Show Alert
-                        Toast.makeText(getApplicationContext(),
-                                "Position :"+itemPosition+"  ListItem : " +"itemValue", Toast.LENGTH_LONG)
-                                .show();
+                        /*Toast.makeText(getApplicationContext(),
+                                mPhone+" "+mOhip+" "+mDob+" "+mAddress+" "+itemPosition+"  ListItem : " +mName, Toast.LENGTH_LONG)
+                                .show();*/
                         Log.i(TAG, "****************************");
-                        goNext(itemValue);
+                        goNext(mName, mGender, mOhip, mDob, mPhone, mAddress);
 
                     }
 
-                    private void goNext(String patientChoice){
+                    private void goNext(String name, String gender, String ohip, String dob, String phone, String address){
+                        //String[] passArray = {gender, ohip, dob, phone, address};
+
                         Intent intent = new Intent(patientList.this, patientMain.class);
-                        intent.putExtra("patientChoice", patientChoice);
+                        intent.putExtra("name", name);
+                        intent.putExtra("gender", gender);
+                        intent.putExtra("dob", dob);
+                        intent.putExtra("ohip", ohip);
+                        intent.putExtra("phone", phone);
+                        intent.putExtra("address", address);
                         startActivity(intent);
                     }
 
