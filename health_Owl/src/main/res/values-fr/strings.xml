@@ -1,4 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">HealthOwl</string>
+
+    <string name="password">mot de passe</string>
+    <string name="login">Login</string>
+    <string name="sign_in">Login</string>
+
+    <string name="title_activity_appointment">AppointmentActivity</string>
+    <string name="title_activity_appointment_tabs">AppointmentTabs</string>
+    <string name="action_settings">Paramètres</string>
+
+    <string name="err_msg_fname">Entrez votre prénom</string>
+    <string name="err_msg_lname">Saisissez votre nom de famille valide</string>
+    <string name="err_msg_ohip">Entrez le numéro assurance</string>
+    <string name="err_msg_phone">Saisissez un numéro de téléphone valide</string>
+    <string name="err_msg_address">Entrez l adresse</string>
+
+    <string name="radio_male">Mâle</string>
+    <string name="radio_female">femelle</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Bonjour fragment vide</string>
+    <string name="title_activity_login">Login</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">Cette adresse e-mail est incorrecte</string>
+    <string name="error_incorrect_password">Ce mot de passe est incorrect</string>
+    <string name="error_field_required">Ce champ est requis</string>
+    <string name="permission_rationale">"Les autorisations relatives aux contacts sont nécessaires pour fournir des e-mails
+                 Complétions."
+    </string>
+    <string name="view">Vue</string>
+
+    <string name="log_out">Se déconnecter</string>
+    <string name="selected_date">La date que vous avez choisie sera affichée ici</string>
+    <string name="pick_time">temps de prélèvement</string>
+    <string name="address">Adresse</string>
+    <string name="phone_no">Numéro de téléphone</string>
+    <string name="insurance">Assurance</string>
+    <string name="gender">Le genre</string>
+    <string name="dob">date de naissance</string>
+    <string name="emergency">Urgence ?</string>
+    <string name="level_of_pain">Level of Pain</string>
+    <string name="enter_area_of_pain">Niveau de douleur</string>
+    <string name="department">Département</string>
+    <string name="cardiology">Cardiologie</string>
+    <string name="dermatology">Dermatologie</string>
+    <string name="infectious">Infectieux</string>
+    <string name="physician">Médecin</string>
+    <string name="doctor_s_recommendation">Doctor\'s Recommendation</string>
+    <string name="enter_diagonosis_detail_for_a_patient">Enter Diagonosis detail for a patient.
+    </string>
+    <string name="add_new_appointment">Add new Appointment</string>
+    <string name="save">Save</string>
+    <string name="reason_for_a_visit">Reason for a visit</string>
+    <string name="enter_reason_for_a_visit">Enter Reason for a visit</string>
+    <string name="temperature">Temperature</string>
+    <string name="in_fahrenheit">In Fahrenheit</string>
+    <string name="heartbeatrate">HeartbeatRate</string>
+    <string name="in_bpm">In BPM</string>
+    <string name="bloodpressure">BloodPressure</string>
+    <string name="in_mmhg">In mmHg</string>
+    <string name="physicianField">Physician</string>
+    <string name="infectiousF">Infectious</string>
+    <string name="dermatologyF">Dermatology</string>
+    <string name="cardiologyF">Cardiology</string>
+    <string name="departmentF">Department</string>
+    <string name="enter_area_of_painF">Enter Area of Pain</string>
+    <string name="area_of_painF">Area of Pain</string>
+    <string name="level_of_painF">Level of Pain</string>
+    <string name="emergencyF">Emergency ?</string>
+    <string name="doctor_s_recommendationF">Recommandation du médecin</string>
+    <string name="groups">Groupes</string>
+    <string name="appointments">Rendez-vous</string>
+    <string name="patients">Patients</string>
+    <string name="enter_group_name">Entrez le nom du groupe</string>
+    <string name="abbreviation">Abréviation:</string>
+    <string name="group_abbreviation">Abréviation de groupe</string>
+    <string name="saveG">sauvegarder</string>
+    <string name="go_to_all_patients">Aller à tous les patients</string>
+    <string name="do_you_want_to_add_a_new_appointment">Voulez-vous ajouter un nouveau rendez-vous?
+    </string>
+    <string name="completed_successfully">Complété avec succès!</string>
+    <string name="birthday">Anniversaire</string>
+    <string name="male">Male</string>
+    <string name="female">Femelle</string>
+    <string name="submit">Soumettre</string>
+    <string name="year">Annee</string>
+    <string name="day">Jour</string>
+    <string name="enter_first_name">Entrez votre prénom</string>
+    <string name="enter_last_name">Saisissez votre nom</string>
+    <string name="enter_insurance_number">Inscrivez le numéro assurance</string>
+    <string name="enter_phone_number">Saisissez votre numéro de téléphone</string>
+    <string name="enter_address">Entrer adresse</string>
+    <string name="proceed">Procéder</string>
+    <string name="is_connected">est connecté?</string>
+    <string name="name">Nom</string>
+    <string name="country">Country</string>
+    <string name="twitter">Twitter</string>
+    <string name="post">POSTER</string>
+    <string name="enter_any_description_needed">Entrez toute description nécessaire.</string>
+    <string name="any_comments">Tous les commentaires</string>
+    <string name="dr_nurse_name">Nom du médecin</string>
+    <string name="with">Avec</string>
+    <string name="select_time">Sélectionner le temps</string>
+    <string name="select_date">sélectionner la date</string>
+    <string name="select_dateC">sélectionner la date</string>
+    <string name="enter_ohip">Entrez le numéro assurance</string>
+    <string name="insurance_no">Entrez numéro assurance</string>
+    <string name="enter_patient_name">Entrez Nom patient</string>
+    <string name="patient">Patient</string>
+    <string name="enter_reason_for_a_visitG">Entrez Raison de la visite</string>
+    <string name="reason_for_a_visitG">Entrez Raison de la visite</string>
 </resources>
