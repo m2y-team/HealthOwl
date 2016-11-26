@@ -28,13 +28,13 @@ public class GroupMainActivity extends AppCompatActivity {
         setSupportActionBar(myDetailsToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Groups");
+        getSupportActionBar().setTitle(R.string.Grouptitle);
 
 
         addGroup = (FloatingActionButton) findViewById(R.id.add_group_button);
         addGroup.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-            goToAddGroup("group");
+            goToAddGroup(getString(R.string.group));
             }
         });
 
@@ -42,13 +42,13 @@ public class GroupMainActivity extends AppCompatActivity {
 
         // Defined Array values to show in ListView
         String[] values = new String[]{
-                "Cardiology",
-                "ENT",
-                "Neurology",
-                "Oncology",
-                "Nutrition and dietetics",
-                "Hepatitis",
-                "Cancer"
+                getString(R.string.group1),
+                getString(R.string.group2),
+                getString(R.string.group3),
+                getString(R.string.group4),
+                getString(R.string.group5),
+                getString(R.string.group6),
+                getString(R.string.group7)
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,

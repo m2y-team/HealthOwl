@@ -18,7 +18,7 @@ public class GroupDetails extends AppCompatActivity {
         setSupportActionBar(myPatientToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Cardiology");
+        getSupportActionBar().setTitle(R.string.testGroupTitle);
 
 
 

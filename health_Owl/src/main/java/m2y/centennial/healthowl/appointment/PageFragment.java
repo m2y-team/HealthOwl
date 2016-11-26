@@ -28,8 +28,8 @@ public class PageFragment extends Fragment {
     Switch switchButton;
     Boolean emergency_state;
     SeekBar levelOfPain;
-    String switchOn = "Switch is ON";
-    String switchOff = "Switch is OFF";
+    String switchOn = getString(R.string.switchOn);
+    String switchOff = getString(R.string.switchOff);
     private RadioGroup radioDeptGroup;
     private RadioButton radioDeptButton;
     String deptSelected;

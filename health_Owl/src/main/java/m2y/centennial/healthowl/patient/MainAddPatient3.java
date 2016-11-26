@@ -26,7 +26,7 @@ public class MainAddPatient3 extends AppCompatActivity {
         mToolbar3 = (Toolbar) findViewById(R.id.toolbar3);
 
         setSupportActionBar(mToolbar3);
-        getSupportActionBar().setTitle("Add New Patient");
+        getSupportActionBar().setTitle(R.string.addNewPatient);
 
         mToList = (Button)findViewById(R.id.btnToPatients);
         mToList.setOnClickListener(new View.OnClickListener() {

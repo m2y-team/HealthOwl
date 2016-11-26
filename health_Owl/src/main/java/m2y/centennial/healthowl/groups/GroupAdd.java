@@ -21,7 +21,7 @@ public class GroupAdd extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Add New Group");
+        getSupportActionBar().setTitle(R.string.titleNewGroup);
 
     }
 }
