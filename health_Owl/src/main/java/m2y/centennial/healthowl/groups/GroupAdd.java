@@ -6,7 +6,7 @@ import android.support.v7.widget.Toolbar;
 
 import m2y.centennial.healthowl.R;
 
-/*M2Y*/
+/**M2Y*/
 public class GroupAdd extends AppCompatActivity {
 
     private Toolbar mToolbar;
@@ -21,7 +21,7 @@ public class GroupAdd extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Add New Group");
+        getSupportActionBar().setTitle(R.string.titleNewGroup);
 
     }
 }

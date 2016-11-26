@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import m2y.centennial.healthowl.R;
-/*M2Y*/
+/**M2Y*/
 public class GroupDetails extends AppCompatActivity {
 
     @Override
@@ -18,7 +18,7 @@ public class GroupDetails extends AppCompatActivity {
         setSupportActionBar(myPatientToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Cardiology");
+        getSupportActionBar().setTitle(R.string.testGroupTitle);
 
 
 

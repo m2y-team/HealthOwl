@@ -14,14 +14,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import m2y.centennial.healthowl.R;
 
 /**
- * Created by yesha on 2016-10-21.
- */
-/*M2Y*/
+    M2Y*/
 public class PageFragment extends Fragment {
 
     public static final String ARG_PAGE = "ARG_PAGE";
@@ -31,8 +28,8 @@ public class PageFragment extends Fragment {
     Switch switchButton;
     Boolean emergency_state;
     SeekBar levelOfPain;
-    String switchOn = "Switch is ON";
-    String switchOff = "Switch is OFF";
+    String switchOn = getString(R.string.switchOn);
+    String switchOff = getString(R.string.switchOff);
     private RadioGroup radioDeptGroup;
     private RadioButton radioDeptButton;
     String deptSelected;

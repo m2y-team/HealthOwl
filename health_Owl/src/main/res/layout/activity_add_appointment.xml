@@ -47,10 +47,7 @@
             android:layout_marginTop="?attr/actionBarSize"
 
             android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            >
-
-
+            android:paddingBottom="20dp">
 
             <TableLayout
                 android:layout_width="match_parent"

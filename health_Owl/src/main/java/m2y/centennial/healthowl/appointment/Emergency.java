@@ -17,7 +17,7 @@ import android.widget.Switch;
 import m2y.centennial.healthowl.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * M2Y
  */
 public class Emergency extends Fragment {
 
@@ -25,8 +25,8 @@ public class Emergency extends Fragment {
     public static Switch switchButton;
     public static  Boolean emergency_state;
     public static SeekBar levelOfPain;
-    String switchOn = "Switch is ON";
-    String switchOff = "Switch is OFF";
+    String switchOn = getString(R.string.switchO);
+    String switchOff = getString(R.string.switchOf);
     public static RadioGroup radioDeptGroup;
     public static RadioButton radioDeptButton;
     public static String deptSelected;

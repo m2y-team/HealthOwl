@@ -86,7 +86,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
         setSupportActionBar(mToolbar2);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Add New Patient (2/2)");
+        getSupportActionBar().setTitle(R.string.addNewPatient2);
 
         //Check network connection
         tvIsConnected = (ProgressBar) findViewById(R.id.tvIsConnected);
@@ -106,11 +106,11 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
 
         //Get items from previous part of the form
         Intent intent = getIntent();
-        addFName = intent.getStringExtra("fName");
-        addLName = intent.getStringExtra("lName");
-        addPhone = intent.getStringExtra("phone");
-        addAddress = intent.getStringExtra("address");
-        addOhip = intent.getStringExtra("ohip");
+        addFName = intent.getStringExtra(getString(R.string.fname));
+        addLName = intent.getStringExtra(getString(R.string.lname));
+        addPhone = intent.getStringExtra(getString(R.string.phone));
+        addAddress = intent.getStringExtra(getString(R.string.addressv));
+        addOhip = intent.getStringExtra(getString(R.string.ohipv));
 
         //Toast.makeText(getApplicationContext(), fName+" "+lName+" "+phone+" "+address+" "+ohip, Toast.LENGTH_SHORT).show();
 
@@ -118,18 +118,18 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
         //add listener on Spinner
         mSpinner = (Spinner) findViewById(R.id.spinnerMonth);
         List<String> list = new ArrayList<String>();
-        list.add("Jan");
-        list.add("Feb");
-        list.add("Mar");
-        list.add("Apr");
-        list.add("May");
-        list.add("Jun");
-        list.add("Jul");
-        list.add("Aug");
-        list.add("Sep");
-        list.add("Oct");
-        list.add("Nov");
-        list.add("Dec");
+        list.add(getString(R.string.jan));
+        list.add(getString(R.string.feb));
+        list.add(getString(R.string.mar));
+        list.add(getString(R.string.apr));
+        list.add(getString(R.string.may));
+        list.add(getString(R.string.jun));
+        list.add(getString(R.string.jul));
+        list.add(getString(R.string.aug));
+        list.add(getString(R.string.sep));
+        list.add(getString(R.string.oct));
+        list.add(getString(R.string.nov));
+        list.add(getString(R.string.dec));
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_spinner_item,list);
@@ -253,7 +253,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
 
                     Toast.makeText(getApplicationContext(), addFName+" "+addLName+" "+addPhone+" "+addAddress+" "+addOhip+" "+addGender+" "+addDob, Toast.LENGTH_SHORT).show();
                     //call AsynTask to perform network operation on separate thread
-                    new MainAddPatient2.HttpAsyncTask().execute("https://m2y-healthowl.herokuapp.com/patients");
+                    new MainAddPatient2.HttpAsyncTask().execute(getString(R.string.link));
                     proceedForm(addName);
                 }
         }

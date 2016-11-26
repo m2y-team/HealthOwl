@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-/*M2Y*/
+/**M2Y*/
 public class PatientFragmentAdapter extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 2;

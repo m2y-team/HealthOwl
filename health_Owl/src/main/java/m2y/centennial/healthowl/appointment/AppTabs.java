@@ -14,6 +14,7 @@ import java.util.List;
 
 import m2y.centennial.healthowl.R;
 
+/**M2Y*/
 public class AppTabs extends AppCompatActivity {
 
     private Toolbar toolbar;

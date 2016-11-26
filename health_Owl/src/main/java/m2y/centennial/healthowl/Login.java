@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-/*M2Y*/
+/**M2Y*/
 public class Login extends AppCompatActivity {
 
     private EditText mLogin;
