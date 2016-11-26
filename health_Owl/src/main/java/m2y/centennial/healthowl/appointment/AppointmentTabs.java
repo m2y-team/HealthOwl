@@ -1,13 +1,14 @@
 package m2y.centennial.healthowl.appointment;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 
 import m2y.centennial.healthowl.R;
-/*M2Y*/
+/**
+    M2Y*/
+
 public class AppointmentTabs extends AppCompatActivity {
 
     @Override

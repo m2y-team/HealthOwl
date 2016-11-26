@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import m2y.centennial.healthowl.R;
-/*M2Y*/
+/**M2Y*/
 public class GroupDetails extends AppCompatActivity {
 
     @Override

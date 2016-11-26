@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import m2y.centennial.healthowl.R;
-/*M2Y*/
+/**M2Y*/
 public class GroupMainActivity extends AppCompatActivity {
 
     FloatingActionButton addGroup;

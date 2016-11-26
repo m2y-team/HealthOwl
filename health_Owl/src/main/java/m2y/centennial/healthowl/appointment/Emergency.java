@@ -17,7 +17,7 @@ import android.widget.Switch;
 import m2y.centennial.healthowl.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * M2Y
  */
 public class Emergency extends Fragment {
 

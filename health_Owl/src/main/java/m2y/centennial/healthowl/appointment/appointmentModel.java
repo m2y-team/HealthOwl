@@ -1,7 +1,7 @@
 package m2y.centennial.healthowl.appointment;
 
 /**
- * Created by yesha on 2016-11-23.
+ * M2Y
  */
 
 public class appointmentModel {

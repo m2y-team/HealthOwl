@@ -13,7 +13,7 @@ import m2y.centennial.healthowl.appointment.MainAppointments;
 import m2y.centennial.healthowl.groups.GroupMainActivity;
 import m2y.centennial.healthowl.patient.patientList;
 
-/*M2Y*/
+/**M2Y*/
 public class menu extends AppCompatActivity {
 
     private Button mPatient;

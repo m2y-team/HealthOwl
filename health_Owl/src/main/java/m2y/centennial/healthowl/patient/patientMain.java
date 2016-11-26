@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import m2y.centennial.healthowl.R;
-/*M2Y*/
+/**M2Y*/
 public class patientMain extends AppCompatActivity {
 
     private String mTitle;
