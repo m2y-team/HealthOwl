@@ -25,7 +25,7 @@ public class Emergency extends Fragment {
     public static Switch switchButton;
     public static  Boolean emergency_state;
     public static SeekBar levelOfPain;
-    String switchOn = getString(R.string.switchO);
+    String switchOn = "Switch is ON";
     String switchOff = getString(R.string.switchOf);
     public static RadioGroup radioDeptGroup;
     public static RadioButton radioDeptButton;
@@ -33,8 +33,14 @@ public class Emergency extends Fragment {
     public static EditText areaOfPain;
 
     public Emergency() {
+      //  Log.d("TEST","EMERGENCY FRAGMENT");
         // Required empty public constructor
     }
+
+//    public static Emergency newInstance(){
+//        Emergency emergency = new Emergency();
+//        return emergency;
+//    }
 
 
     @Override

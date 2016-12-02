@@ -76,14 +76,14 @@ public class AppTabs extends AppCompatActivity {
             return mFragmentList.get(position);
         }
 
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
         public void addFrag(Fragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
         }
 
         @Override
