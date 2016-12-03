@@ -1,7 +1,6 @@
 package m2y.centennial.healthowl.appointment;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,7 +14,7 @@ import android.widget.Toast;
 import m2y.centennial.healthowl.R;
 
 /**
- * M2Y
+ * A simple {@link Fragment} subclass.
  */
 public class Diagnosis extends Fragment {
     Button newAppointment, appSave;
@@ -53,19 +52,12 @@ public class Diagnosis extends Fragment {
         });
 
         newAppointment = (Button) view.findViewById(R.id.btnNewApp);
-        newAppointment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toAppointment();
-            }
-        });
 
         return view;
     }
 
-    private void toAppointment(){
-        Intent intent = new Intent(getActivity(), AddAppointment.class);
-        startActivity(intent);
-    }
+
+
+
 
 }
