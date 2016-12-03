@@ -14,7 +14,6 @@ import java.util.List;
 
 import m2y.centennial.healthowl.R;
 
-/**M2Y*/
 public class AppTabs extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -76,14 +75,14 @@ public class AppTabs extends AppCompatActivity {
             return mFragmentList.get(position);
         }
 
-        public void addFrag(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
         @Override
         public int getCount() {
             return mFragmentList.size();
+        }
+
+        public void addFrag(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
         }
 
         @Override

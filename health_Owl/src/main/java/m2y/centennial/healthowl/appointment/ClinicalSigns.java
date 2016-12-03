@@ -11,7 +11,7 @@ import android.widget.EditText;
 import m2y.centennial.healthowl.R;
 
 /**
- * M2Y
+ * A simple {@link Fragment} subclass.
  */
 public class ClinicalSigns extends Fragment {
 
