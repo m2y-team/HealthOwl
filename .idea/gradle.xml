@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/health_Owl" />
+            <option value="$PROJECT_DIR$/healthowlnewstartpage" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
