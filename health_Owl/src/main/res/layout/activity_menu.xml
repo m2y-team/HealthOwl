@@ -20,7 +20,7 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
 
     <Button
-        android:text="Patients"
+        android:text="@string/patients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/patientsButton"
@@ -32,7 +32,7 @@
         android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
         android:layout_marginBottom="111dp"/>
     <Button
-        android:text="Appointments"
+        android:text="@string/appointments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/appointmentsButton"
@@ -43,7 +43,7 @@
         android:width="150dp" android:layout_above="@+id/patientsButton"
         android:layout_alignStart="@+id/patientsButton"/>
     <Button
-        android:text="Groups"
+        android:text="@string/groups"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/GroupsButton"

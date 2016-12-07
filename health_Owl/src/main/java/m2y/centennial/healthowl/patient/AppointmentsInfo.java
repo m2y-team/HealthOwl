@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 import m2y.centennial.healthowl.R;
 
-
+/**M2Y*/
 public class AppointmentsInfo extends Fragment {
 
     public AppointmentsInfo() {

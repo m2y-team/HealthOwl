@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import m2y.centennial.healthowl.R;
 
-/*M2Y*/
+/**M2Y*/
 /*test comment for commit*/
 public class Information extends Fragment {
 

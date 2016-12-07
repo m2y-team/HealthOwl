@@ -27,7 +27,7 @@ import m2y.centennial.healthowl.HttpHandler;
 import m2y.centennial.healthowl.R;
 
 
-/*M2Y*/
+/**M2Y*/
 public class patientList extends AppCompatActivity {
 
     public static final String TAG = patientList.class.getSimpleName();

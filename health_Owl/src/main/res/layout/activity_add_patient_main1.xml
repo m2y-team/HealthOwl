@@ -52,7 +52,7 @@
             android:maxLines="1"
             android:layout_below="@+id/etLastName"
             android:inputType="textCapSentences"
-            android:hint="Enter First Name"/>
+            android:hint="@string/enter_first_name"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -66,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:hint="Enter Last Name"
+            android:hint="@string/enter_last_name"
             android:inputType="textCapSentences"
             android:layout_below="@+id/etOhip"/>
         </android.support.design.widget.TextInputLayout>
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:inputType="number"
-            android:hint="Enter Insurance Number"/>
+            android:hint="@string/enter_insurance_number"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -95,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:hint="Enter Phone Number"
+                android:hint="@string/enter_phone_number"
                 android:inputType="phone"
                 android:layout_below="@+id/etCellphone"/>
         </android.support.design.widget.TextInputLayout>
@@ -110,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:hint="Enter Address"
+                android:hint="@string/enter_address"
                 android:inputType="textPostalAddress"/>
         </android.support.design.widget.TextInputLayout>
 
@@ -119,7 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Proceed"
+                android:text="@string/proceed"
                 android:background="@color/colorPrimary"
                 android:layout_marginTop="40dp"
                 android:textColor="@android:color/white"/>

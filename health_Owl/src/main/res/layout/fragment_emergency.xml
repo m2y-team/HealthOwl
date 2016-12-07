@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Emergency ?" />
+                android:text="@string/emergency" />
 
             <Switch
                 android:id="@+id/switchButton1"
@@ -41,7 +41,7 @@
             android:padding="2dp">
 
             <TextView
-                android:text="Level of Pain"
+                android:text="@string/level_of_pain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textLevelOfPain" />
@@ -75,7 +75,7 @@
                 android:ems="10"
                 android:id="@+id/editAreaOfPain"
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
-                android:hint="Enter Area of Pain" />
+                android:hint="@string/enter_area_of_pain" />
 
         </TableRow>
 
@@ -86,7 +86,7 @@
             android:padding="2dp">
 
             <TextView
-                android:text="Department"
+                android:text="@string/department"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4" />
@@ -100,26 +100,26 @@
                     android:id="@+id/radioCardiology"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cardiology"
+                    android:text="@string/cardiology"
                     android:checked="true" />
 
                 <RadioButton
                     android:id="@+id/radioDermatology"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dermatology" />
+                    android:text="@string/dermatology" />
 
                 <RadioButton
                     android:id="@+id/radioInfectious"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Infectious" />
+                    android:text="@string/infectious" />
 
                 <RadioButton
                     android:id="@+id/radioPhysician"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Physician" />
+                    android:text="@string/physician" />
 
             </RadioGroup>
 

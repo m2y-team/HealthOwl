@@ -30,9 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A login screen that offers login via email/password.
- */
-/*M2Y*/
+    M2Y*/
 public class LoginActivity extends AppCompatActivity implements OnClickListener {
 
 
