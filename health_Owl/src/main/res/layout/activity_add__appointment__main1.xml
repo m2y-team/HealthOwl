@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="m2y.centennial.healthowl.appointment.Add_Appointment_Main1">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="?attr/colorButtonNormal">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:background="@android:color/background_light">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center" tools:ignore="UselessParent">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="2dp"
+                >
+
+                <TextView
+                    android:id="@+id/textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/emergencyF" />
+
+                <Switch
+                    android:id="@+id/switchButton1"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:textColorLink="@android:color/holo_red_light"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:padding="20dp">
+
+                <TextView
+                    android:text="@string/level_of_painF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textLevelOfPain" />
+
+                <SeekBar
+                    style="@android:style/Widget.SeekBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:max="10"
+                    android:progress="3"
+                    android:id="@+id/levelOfPain" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:padding="20dp">
+
+                <TextView
+                    android:text="@string/area_of_painF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editAreaOfPain"
+                    style="@style/Widget.AppCompat.AutoCompleteTextView"
+                    android:hint="@string/enter_area_of_painF"
+                    android:textColorLink="@android:color/holo_red_light"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:padding="2dp">
+
+                <TextView
+                    android:text="@string/departmentF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4" />
+
+                <RadioGroup
+                    android:id="@+id/radiodepartments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <RadioButton
+                        android:id="@+id/radioCardiology"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cardiologyF"
+                        android:checked="true"
+                        android:textColorLink="@android:color/holo_red_light"/>
+
+                    <RadioButton
+                        android:id="@+id/radioDermatology"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dermatologyF"
+                        android:textColorLink="@android:color/holo_red_light"/>
+
+                    <RadioButton
+                        android:id="@+id/radioInfectious"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/infectiousF"
+                        android:textColorLink="@android:color/holo_red_light"/>
+
+                    <RadioButton
+                        android:id="@+id/radioPhysician"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/physicianField"
+                        android:textColorLink="@android:color/holo_red_light"/>
+
+                </RadioGroup>
+
+
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnProceedApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/proceed"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"/>
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+
