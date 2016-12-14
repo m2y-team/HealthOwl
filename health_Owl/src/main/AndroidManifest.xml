@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="m2y.centennial.healthowl">
+    package="m2y.centennial.healthowl">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.READ_PROFILE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
 
     <application
         android:allowBackup="true"
@@ -17,62 +15,38 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".menu">
-        </activity>
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".menu" />
         <activity
             android:name=".patient.patientList"
             android:parentActivityName=".menu">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
-                android:value=".menu"/>
-
-
+                android:value=".menu" />
         </activity>
         <activity
             android:name=".patient.patientMain"
             android:parentActivityName=".patient.patientList">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
-                android:value=".patientList"/>
+                android:value=".patientList" />
         </activity>
-
-
         <activity
             android:name=".patient.MainAddPatient"
-            android:parentActivityName=".patient.patientList">
-            </activity>>
-
-        <activity android:name=".patient.PatientFragmentAdapter">
-        </activity>
-
-        <activity android:name=".Login">
-
-        </activity>
-
-
+            android:parentActivityName=".patient.patientList" />
+        >
+        <activity android:name=".patient.PatientFragmentAdapter" />
+        <activity android:name=".Login" />
         <activity
             android:name=".patient.MainAddPatient1"
-            android:parentActivityName=".patient.patientList">
-        </activity>
-
-
+            android:parentActivityName=".patient.patientList" />
         <activity
             android:name=".patient.MainAddPatient2"
-            android:parentActivityName=".patient.MainAddPatient1">
-
-        </activity>
+            android:parentActivityName=".patient.MainAddPatient1" />
         <activity
             android:name=".patient.MainAddPatient3"
-            android:parentActivityName=".patient.MainAddPatient2">
-        </activity>
-
-
-
-        <activity android:name=".appointment.AppointmentTabs">
-        </activity>
+            android:parentActivityName=".patient.MainAddPatient2" />
+        <activity android:name=".appointment.AppointmentTabs" />
         <activity
             android:name=".appointment.MainAppointments"
             android:parentActivityName=".menu">
@@ -80,36 +54,34 @@
                 android:name="android.support.ParentACTIVITY"
                 android:value=".menu" />
         </activity>
-
-        <activity android:name=".appointment.AppTabs"
+        <activity
+            android:name=".appointment.AppTabs"
             android:parentActivityName=".appointment.MainAppointments">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
                 android:value=".menu" />
-
         </activity>
         <activity
             android:name=".appointment.AddAppointment"
             android:parentActivityName=".appointment.MainAppointments">
             <meta-data
                 android:name="android.support.ParentACTIVITY"
-                android:value=".appointment.MainAppointments"/>
+                android:value=".appointment.MainAppointments" />
         </activity>
-
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login"></activity>
+        <activity android:name=".groups.GroupMainActivity" />
+        <activity android:name=".groups.GroupAdd" />
+        <activity android:name=".groups.GroupDetails" />
+        <activity android:name=".appointment.Add_Appointment_Main1">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".groups.GroupMainActivity"/>
-        <activity android:name=".groups.GroupAdd"/>
-        <activity android:name=".groups.GroupDetails">
-        </activity>
-
+        <activity android:name=".appointment.Add_Appointment_Main2"></activity>
     </application>
 
 </manifest>
