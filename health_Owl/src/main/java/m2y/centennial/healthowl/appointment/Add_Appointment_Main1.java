@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -25,7 +24,7 @@ public class Add_Appointment_Main1 extends AppCompatActivity {
     String switchOff = "Switch is OFF";
     public static RadioGroup radioDeptGroup;
     public static RadioButton radioDeptButton;
-    public static String deptSelected, painArea, eme_state;
+    public static String deptSelected, painArea, eme_state, appontmentName, setDate, setTime, comments, insurance;
     public static int painLevel;
     public static EditText areaOfPain;
     Button proceed;
@@ -45,20 +44,20 @@ public class Add_Appointment_Main1 extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Add New Appointment (1/2)");
 
-        switchButton = (Switch) findViewById(R.id.switchButton1);
-        switchButton.setChecked(true);
-        switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
-                if (bChecked) {
-                    emergency_state = true;
-                    eme_state = "yes";
-                } else {
-                    emergency_state = false;
-                    eme_state = "no";
-                }
-            }
-        });
+//        switchButton = (Switch) findViewById(R.id.switchButton1);
+//        switchButton.setChecked(true);
+//        switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
+//                if (bChecked) {
+//                    emergency_state = true;
+//                    eme_state = "yes";
+//                } else {
+//                    emergency_state = false;
+//                    eme_state = "no";
+//                }
+//            }
+//        });
 
         //areaOfPain.setText("hello");
         areaOfPain = (EditText) findViewById(R.id.editAreaOfPain);
@@ -98,26 +97,50 @@ public class Add_Appointment_Main1 extends AppCompatActivity {
 
             }
         });
+
+        //Get items from previous part of the form
+//        Intent intent = getIntent();
+//        appontmentName = intent.getExtras().get("appointmentName").toString();
+//        setDate = intent.getExtras().get("setDate").toString();
+//        setTime= intent.getExtras().get("setTime").toString();
+//        comments = intent.getExtras().get("comments").toString();
+//        insurance = intent.getExtras().get("insurance").toString();
+
+
+        //Toast.makeText(getApplicationContext(), emergency_state+" "+areaOfPain+" "+levelOfPain+" "+deptSelected, Toast.LENGTH_LONG).show();
         proceed = (Button) findViewById(R.id.btnProceedApp);
         proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Log.e("State","" + eme_state);
-
+//Get items from previous part of the form
+                Intent intent = getIntent();
+                appontmentName = intent.getExtras().get("appointmentName").toString();
+                setDate = intent.getExtras().get("setDate").toString();
+                setTime= intent.getExtras().get("setTime").toString();
+                comments = intent.getExtras().get("comments").toString();
+                insurance = intent.getExtras().get("insurance").toString();
                 painArea = areaOfPain.getText().toString();
                 Log.e("Areaof Pain","" + painArea);
 
-                proceedForm(eme_state,painArea, painLevel, deptSelected);
+                //Toast.makeText(getBaseContext(), appontmentName+" "+setDate, Toast.LENGTH_LONG).show();
+
+                proceedForm(painArea, painLevel, deptSelected, appontmentName, setDate, setTime, comments, insurance);
             }
         });
     }
 
-    private void proceedForm(String eme_state, String painArea, int painLevel, String deptSelected){
+    private void proceedForm(String painArea, int painLevel, String deptSelected,String appontmentName,String setDate,String setTime,String comments, String insurance){
         Intent intent = new Intent(this, Add_Appointment_Main2.class);
-        intent.putExtra("emergency", eme_state);
+        //intent.putExtra("emergency", eme_state);
         intent.putExtra("areaOfPain", painArea);
         intent.putExtra("levelOfPain", painLevel);
         intent.putExtra("deptSelected", deptSelected);
+        intent.putExtra("appointmentName",appontmentName);
+        intent.putExtra("setDate",setDate);
+        intent.putExtra("setTime",setTime);
+        intent.putExtra("comments",comments);
+        intent.putExtra("insurance",insurance);
         startActivity(intent);
     }
 

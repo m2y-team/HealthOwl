@@ -120,7 +120,7 @@ public class MainAppointments extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Click action
-                Intent intent = new Intent(context, AddAppointment.class);
+                Intent intent = new Intent(context, Add_Appointment_Main1.class);
                 startActivity(intent);
             }
         });
