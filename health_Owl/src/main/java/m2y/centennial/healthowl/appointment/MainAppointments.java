@@ -1,27 +1,20 @@
 package m2y.centennial.healthowl.appointment;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ExpandableListView.OnGroupClickListener;
-import android.widget.ExpandableListView.OnGroupCollapseListener;
-import android.widget.ExpandableListView.OnGroupExpandListener;
-import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -31,9 +24,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import m2y.centennial.healthowl.HttpHandler;
+import m2y.centennial.healthowl.LoginActivity;
 import m2y.centennial.healthowl.MainActivity;
 import m2y.centennial.healthowl.R;
+import m2y.centennial.healthowl.patient.patientList;
 
 public class MainAppointments extends AppCompatActivity {
 
@@ -43,11 +42,12 @@ public class MainAppointments extends AppCompatActivity {
     private ListView lv;
     Context context;
     private FloatingActionButton addAppointment;
+    Toolbar myToolbar;
 
     // URL to get contacts JSON
     private static String url = "https://m2y-healthowl.herokuapp.com/appointments";
 
-    ArrayList<HashMap<String, String>> contactList;
+    //ArrayList<HashMap<String, String>> contactList;
     ArrayList<HashMap<String, String>> appointmentList;
 
     @Override
@@ -55,12 +55,47 @@ public class MainAppointments extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_appointments);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.my_appointment_toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Appointments");
-        context=this;
+        //Set up Menu
+        initToolBar();
+
+        //Set up Bottom Bar
+        final BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottom_navigation);
+        bottomNavigationView.getMenu().getItem(0).setChecked(false);
+        bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        bottomNavigationView.getMenu().getItem(2).setChecked(false);
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        Intent myAct = new Intent();
+                        switch (item.getItemId()) {
+                            case R.id.action_appointments:
+
+                                myAct = new Intent(findViewById(item.getItemId()).getContext(), MainAppointments.class);
+
+                                break;
+                            case R.id.action_patients:
+
+                                myAct = new Intent(findViewById(item.getItemId()).getContext(), patientList.class);
+
+
+                                break;
+                            case R.id.action_logout:
+                                myAct = new Intent(findViewById(item.getItemId()).getContext(), LoginActivity.class);
+                                break;
+
+                        }
+                        startActivity(myAct);
+                        return false;
+                    }
+                });
+
+
+
 
         // Add appointment Button
 //        appAppointment = (ImageButton) findViewById(R.id.addAppointment);
@@ -92,6 +127,32 @@ public class MainAppointments extends AppCompatActivity {
 
 
     }
+
+    //Setting up toolbar
+    public void initToolBar() {
+        myToolbar = (Toolbar)findViewById(R.id.my_appointment_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setTitle("Health Owl");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     /**
      * Async task class to get json by making HTTP call
      */
@@ -188,7 +249,7 @@ public class MainAppointments extends AppCompatActivity {
              * */
             ListAdapter adapter = new SimpleAdapter(
                     MainAppointments.this, appointmentList,
-                    R.layout.list_item, new String[]{"patientName","date","time"}, new int[]{R.id.patientName,R.id.date,R.id.time});
+                    R.layout.list_item, new String[]{"patientName","date","time"}, new int[]{R.id.patientName, R.id.date, R.id.time});
 
             lv.setAdapter(adapter);
 
@@ -219,13 +280,15 @@ public class MainAppointments extends AppCompatActivity {
                 }
 
                 private void goNext(String patientChoice){
-                    Intent intent = new Intent(MainAppointments.this, AppTabs.class);
+                    Intent intent = new Intent(MainAppointments.this, Add_Appointment_Main1.class);
                     intent.putExtra("patientChoice", patientChoice);
                     startActivity(intent);
                 }
 
             });
         }
+
+
     }
 
 }

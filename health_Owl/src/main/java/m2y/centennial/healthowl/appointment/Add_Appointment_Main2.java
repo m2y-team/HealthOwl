@@ -1,18 +1,15 @@
 package m2y.centennial.healthowl.appointment;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.Toast;
 
 import m2y.centennial.healthowl.R;
-
-import static m2y.centennial.healthowl.R.id.editAreaOfPain;
-import static m2y.centennial.healthowl.R.id.view;
 
 public class Add_Appointment_Main2 extends AppCompatActivity {
 
@@ -20,10 +17,19 @@ public class Add_Appointment_Main2 extends AppCompatActivity {
     Button updateDetails;
     public static String deptSelected, areaOfPain, emergency_state;
     public static int levelOfPain;
+    private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__appointment__main2);
+
+        //Set up Menu with back button
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Add New Appointment (2/2)");
 
         reasonForVisit = (EditText) findViewById(R.id.reasonForVisit);
         reasonForVisit.getText();

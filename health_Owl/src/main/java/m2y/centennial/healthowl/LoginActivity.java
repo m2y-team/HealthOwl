@@ -29,6 +29,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import m2y.centennial.healthowl.appointment.MainAppointments;
+
 /**
     M2Y*/
 public class LoginActivity extends AppCompatActivity implements OnClickListener {
@@ -361,7 +363,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
             if (success) {
 
                 Toast.makeText(LoginActivity.this, mEmailView.getText(),Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(LoginActivity.this, menu.class);
+                Intent intent = new Intent(LoginActivity.this, MainAppointments.class);
                 //intent.putExtra("key",mEmailView.getText().toString());
                 LoginActivity.this.startActivity(intent);
                 //setResult(RESULT_OK, intent);
