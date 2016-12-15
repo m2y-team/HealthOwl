@@ -10,16 +10,82 @@ public class appointmentModel {
     private String mSetDate;
     private String mSetTime;
     private  String mComments;
+    private String mOhip;
+    private String mAreaOfPain;
+    private int mLevelOfPain;
+    private String mDeptSelected;
+    //private String mInsurance;
+    private String mReason;
 
-    public String getOhip() {
+    public String getmAreaOfPain() {
+        return mAreaOfPain;
+    }
+
+    public void setmAreaOfPain(String mAreaOfPain) {
+        this.mAreaOfPain = mAreaOfPain;
+    }
+
+    public int getmLevelOfPain() {
+        return mLevelOfPain;
+    }
+
+    public void setmLevelOfPain(int mLevelOfPain) {
+        this.mLevelOfPain = mLevelOfPain;
+    }
+
+    public String getmDeptSelected() {
+        return mDeptSelected;
+    }
+
+    public void setmDeptSelected(String mDeptSelected) {
+        this.mDeptSelected = mDeptSelected;
+    }
+
+    public String getmReason() {
+        return mReason;
+    }
+
+    public void setmReason(String mReason) {
+        this.mReason = mReason;
+    }
+
+    public String getmHeart() {
+        return mHeart;
+    }
+
+    public void setmHeart(String mHeart) {
+        this.mHeart = mHeart;
+    }
+
+    public String getmBlood() {
+        return mBlood;
+    }
+
+    public void setmBlood(String mBlood) {
+        this.mBlood = mBlood;
+    }
+
+    public String getMtemp() {
+        return mtemp;
+    }
+
+    public void setMtemp(String mtemp) {
+        this.mtemp = mtemp;
+    }
+
+    private String mHeart;
+
+    public String getmOhip() {
         return mOhip;
     }
 
-    public void setOhip(String ohip) {
-        mOhip = ohip;
+    public void setmOhip(String mOhip) {
+        this.mOhip = mOhip;
     }
 
-    private String mOhip;
+    private String mBlood;
+    private String mtemp;
+
 
     public String getmAppointmentName() {
         return mAppointmentName;

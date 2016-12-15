@@ -50,28 +50,6 @@
             android:gravity="center" tools:ignore="UselessParent">
 
             <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:padding="2dp"
-                >
-
-                <TextView
-                    android:id="@+id/textview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/emergencyF" />
-
-                <Switch
-                    android:id="@+id/switchButton1"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:textColorLink="@android:color/holo_red_light"/>
-
-            </TableRow>
-
-            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"

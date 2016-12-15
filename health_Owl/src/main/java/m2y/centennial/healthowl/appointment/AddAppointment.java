@@ -101,7 +101,7 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
             JSONObject jsonObject = new JSONObject();
             jsonObject.accumulate("patientName", appointment.getmAppointmentName());
             jsonObject.accumulate("patientId", 1234);
-            jsonObject.accumulate("ohip", appointment.getOhip());
+            jsonObject.accumulate("ohip", appointment.getmOhip());
             jsonObject.accumulate("date", appointment.getmSetDate());
             jsonObject.accumulate("time", appointment.getmSetTime());
             jsonObject.accumulate("comments", appointment.getmComments());
@@ -225,7 +225,7 @@ public class AddAppointment extends AppCompatActivity implements View.OnClickLis
 
             appointment = new appointmentModel();
             appointment.setmAppointmentName(appontmentName);
-            appointment.setOhip(insurance);
+            appointment.setmOhip(insurance);
             appointment.setmSetDate(setDate);
             appointment.setmSetTime(setTime);
             appointment.setmComments(comments);
