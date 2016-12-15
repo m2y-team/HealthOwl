@@ -11,6 +11,16 @@
               android:paddingTop="@dimen/activity_vertical_margin"
               tools:context="m2y.centennial.healthowl.LoginActivity" android:weightSum="1">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/health_owl"
+        android:id="@+id/imageView5"
+        android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingRight="50dp" android:paddingTop="50dp"/>
+
     <!-- Login progress -->
     <ProgressBar
         android:id="@+id/login_progress"
@@ -22,14 +32,14 @@
 
     <ScrollView
         android:id="@+id/login_form"
-        android:layout_width="match_parent"
+        android:layout_width="647dp"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" android:layout_marginTop="30dp">
+            android:orientation="vertical" android:layout_marginTop="100dp">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -80,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="@string/action_sign_in"
-                android:textStyle="bold" android:background="@color/colorPrimary"
+                android:textStyle="bold" android:background="@color/colorHealthOwl"
                 android:textColor="@android:color/background_light"/>
 
         </LinearLayout>

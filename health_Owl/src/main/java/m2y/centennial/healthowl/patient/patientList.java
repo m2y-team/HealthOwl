@@ -83,8 +83,6 @@ public class patientList extends AppCompatActivity {
                                 myAct = new Intent(findViewById(item.getItemId()).getContext(), patientList.class);
 
 
-
-
                                 break;
                             case R.id.action_logout:
                                 myAct = new Intent(findViewById(item.getItemId()).getContext(), LoginActivity.class);
@@ -163,6 +161,7 @@ public class patientList extends AppCompatActivity {
 
                             // tmp hash map for single contact
                             HashMap<String, String> contact = new HashMap<>();
+
 
                             // adding each child node to HashMap key => value
                             contact.put("id", id);

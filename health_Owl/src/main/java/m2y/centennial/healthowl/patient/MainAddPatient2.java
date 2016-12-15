@@ -251,7 +251,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
                     addDob = addMonth + " " + addDay + ", "+addYear;
                     //addName = addFName + addLName;
 
-                    Toast.makeText(getApplicationContext(), addFName+" "+addLName+" "+addPhone+" "+addAddress+" "+addOhip+" "+addGender+" "+addDob, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), addFName+" "+addLName+" "+addPhone+" "+addAddress+" "+addOhip+" "+addGender+" "+addDob, Toast.LENGTH_SHORT).show();
                     //call AsynTask to perform network operation on separate thread
                     new MainAddPatient2.HttpAsyncTask().execute(getString(R.string.link));
                     proceedForm(addName);
@@ -278,7 +278,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-            Toast.makeText(getBaseContext(), "Data Sent!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getBaseContext(), "Data Sent!", Toast.LENGTH_LONG).show();
         }
     }
 

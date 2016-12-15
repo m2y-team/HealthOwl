@@ -434,6 +434,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                         // tmp hash map for single contact
                         ArrayList<String> list = new ArrayList<String>();
 
+
                         // adding each child node to HashMap key => value
 
                         list.add(cred);
