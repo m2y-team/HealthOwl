@@ -6,8 +6,8 @@
     android:padding="@dimen/activity_horizontal_margin">
 
     <TextView
-        android:id="@+id/patientName"
-        android:layout_width="match_parent"
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
         android:paddingTop="6dip"
@@ -17,19 +17,22 @@
         android:layout_weight="1" />
 
     <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:textColor="@android:color/holo_red_light"
-        android:layout_weight="1" />
-
-    <TextView
         android:id="@+id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="16sp"
+        android:paddingBottom="8dip"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/patientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
         android:textColor="?android:attr/textColorSecondary"
-        android:textStyle="bold"
+        android:textSize="18sp"
+
         android:layout_weight="1" />
 
 </LinearLayout>

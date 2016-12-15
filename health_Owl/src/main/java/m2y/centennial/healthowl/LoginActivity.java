@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
@@ -26,18 +27,27 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import m2y.centennial.healthowl.appointment.MainAppointments;
 
 /**
     M2Y*/
 public class LoginActivity extends AppCompatActivity implements OnClickListener {
 
-
+    public static final String TAG = LoginActivity.class.getSimpleName();
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "doc1@mail.com:1234", "doc2@mail.com:1234"
     };
     private UserLoginTask mAuthTask = null;
+
+    // URL to get contacts JSON
+    private static String url = "https://m2y-healthowl.herokuapp.com/users";
 
     // UI references.
 
@@ -56,6 +66,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
 
@@ -118,6 +129,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
 
         attemptLogin();
         }
+
     }
 /*
     private void populateAutoComplete() {
@@ -360,8 +372,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
 
             if (success) {
 
-                Toast.makeText(LoginActivity.this, mEmailView.getText(),Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(LoginActivity.this, menu.class);
+                //Toast.makeText(LoginActivity.this, mEmailView.getText(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(LoginActivity.this, MainAppointments.class);
                 //intent.putExtra("key",mEmailView.getText().toString());
                 LoginActivity.this.startActivity(intent);
                 //setResult(RESULT_OK, intent);
@@ -378,4 +390,87 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
             showProgress(false);
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Async task class to get json by making HTTP call
+     */
+    private class GetContacts extends AsyncTask<Void, Void, Void> {
+
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            HttpHandler sh = new HttpHandler();
+
+            // Making a request to url and getting response
+            String jsonStr = sh.makeServiceCall(url);
+
+            Log.e(TAG, "Response from url: " + jsonStr);
+
+            if (jsonStr != null) {
+                try {
+
+                    //JSONObject jsonObj = new JSONObject(jsonStr);
+                    JSONArray contacts = new JSONArray(jsonStr);
+
+                    // looping through All Contacts
+                    for (int i = 0; i < contacts.length(); i++) {
+                        JSONObject c = contacts.getJSONObject(i);
+
+                        String login = c.getString("login");
+                        String password = c.getString("password");
+                        String cred = login + ":" + password;
+
+                        // tmp hash map for single contact
+                        ArrayList<String> list = new ArrayList<String>();
+
+                        // adding each child node to HashMap key => value
+
+                        list.add(cred);
+
+                    }
+                } catch (final JSONException e) {
+                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),
+                                    "Json parsing error: " + e.getMessage(),
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                        }
+                    });
+
+                }
+            } else {
+                Log.e(TAG, "Couldn't get json from server.");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Couldn't get json from server. Check LogCat for possible errors!",
+                                Toast.LENGTH_LONG)
+                                .show();
+                    }
+                });
+            }
+
+            return null;
+        }
+
+
+
+
+    }
+
 }

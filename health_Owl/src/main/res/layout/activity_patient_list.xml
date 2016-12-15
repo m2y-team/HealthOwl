@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:menu="@menu/bottom_navigation_main"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        android:layout_alignParentBottom="true"
+        />
+
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +25,9 @@
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="m2y.centennial.healthowl.patient.patientList">
+    tools:context="m2y.centennial.healthowl.patient.patientList"
+    android:layout_above="@+id/bottom_navigation"
+    android:layout_alignParentStart="true">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -31,22 +51,22 @@
                   android:layout_height="match_parent"
                   android:layout_marginTop="?attr/actionBarSize"
                   android:orientation="vertical"
-                  android:paddingLeft="30dp"
-                  android:paddingRight="30dp"
+                  android:paddingLeft="20dp"
+                  android:paddingRight="20dp"
                   android:paddingTop="20dp"
                   android:paddingBottom="20dp"
                   android:background="?attr/colorButtonNormal">
 
-    <LinearLayout android:layout_width="match_parent"
+        <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:orientation="vertical"
                   android:paddingLeft="5dp"
                   android:paddingTop="5dp"
                   android:background="@android:color/background_light">
 
-    <include layout="@layout/content_patientlist" />
+            <include layout="@layout/content_patientlist" />
 
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -55,12 +75,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:src="@drawable/ic_add_white_24dp"
-        android:layout_marginRight="50dp" android:layout_marginBottom="40dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="40dp"
         android:layout_width="150dp"/>
 
 </android.support.design.widget.CoordinatorLayout>
 
-
+</RelativeLayout>
 
 
 

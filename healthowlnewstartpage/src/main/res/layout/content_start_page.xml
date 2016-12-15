@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,17 +15,16 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/my_appointment_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_orange_light"
+            android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
-            android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbar3"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout android:layout_width="match_parent"
@@ -39,22 +37,31 @@
                   android:paddingBottom="20dp"
                   android:background="?attr/colorButtonNormal">
 
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="5dp"
+                      android:paddingTop="5dp"
+                      android:background="@android:color/background_light">
 
-            <GridView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <include layout="@layout/content_patientlist" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/addAppointment"
-        android:layout_width="wrap_content"
+        android:id="@+id/add_patient_button"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:src="@drawable/ic_add_white_24dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginRight="50dp" android:layout_marginBottom="40dp"
+        android:layout_width="150dp"/>
 
 </android.support.design.widget.CoordinatorLayout>
+
+
+
+
+
 
