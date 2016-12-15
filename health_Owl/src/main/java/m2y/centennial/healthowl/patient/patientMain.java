@@ -1,19 +1,20 @@
 package m2y.centennial.healthowl.patient;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import m2y.centennial.healthowl.R;
+
 /**M2Y*/
 public class patientMain extends AppCompatActivity {
 
@@ -32,8 +33,8 @@ public class patientMain extends AppCompatActivity {
         //Set up Menu with back button
         Toolbar myPatientToolbar = (Toolbar)findViewById(R.id.toolbar3);
         setSupportActionBar(myPatientToolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeButtonEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(mTitle);
 
 

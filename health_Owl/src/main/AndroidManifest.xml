@@ -70,18 +70,29 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".groups.GroupMainActivity" />
         <activity android:name=".groups.GroupAdd" />
         <activity android:name=".groups.GroupDetails" />
-        <activity android:name=".appointment.Add_Appointment_Main1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".appointment.Add_Appointment_Main1"
+            android:parentActivityName=".appointment.MainAppointments">
+            <meta-data
+                android:name="android.support.ParentACTIVITY"
+                android:value=".appointment.MainAppointments"/>
         </activity>
-        <activity android:name=".appointment.Add_Appointment_Main2"></activity>
+        <activity
+            android:name=".appointment.Add_Appointment_Main2"
+            android:parentActivityName=".appointment.MainAppointments">
+            <meta-data
+                android:name="android.support.Add_Appointment_Main1"
+                android:value=".appointment.Add_Appointment_Main1"/>
+        </activity>
     </application>
 
 </manifest>

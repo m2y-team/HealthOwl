@@ -1,9 +1,9 @@
 package m2y.centennial.healthowl.appointment;
 
 import android.content.Intent;
-import android.os.Parcelable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +15,6 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 
 import m2y.centennial.healthowl.R;
-import m2y.centennial.healthowl.patient.MainAddPatient2;
-
-import static m2y.centennial.healthowl.R.id.view;
-import static m2y.centennial.healthowl.R.string.address;
-import static m2y.centennial.healthowl.R.string.phone;
 
 public class Add_Appointment_Main1 extends AppCompatActivity {
 
@@ -34,11 +29,21 @@ public class Add_Appointment_Main1 extends AppCompatActivity {
     public static int painLevel;
     public static EditText areaOfPain;
     Button proceed;
+    private Toolbar mToolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__appointment__main1);
+
+        //Set up Menu with back button
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Add New Appointment (1/2)");
 
         switchButton = (Switch) findViewById(R.id.switchButton1);
         switchButton.setChecked(true);
@@ -88,6 +93,8 @@ public class Add_Appointment_Main1 extends AppCompatActivity {
                 int selectedId = radioDeptGroup.getCheckedRadioButtonId();
                 // find the radiobutton by returned id
                 radioDeptButton = (RadioButton) group.findViewById(selectedId);
+                deptSelected = radioDeptButton.getText().toString();
+                Log.e("Dept Selected","" + deptSelected);
 
             }
         });
@@ -99,8 +106,7 @@ public class Add_Appointment_Main1 extends AppCompatActivity {
 
                 painArea = areaOfPain.getText().toString();
                 Log.e("Areaof Pain","" + painArea);
-                deptSelected = radioDeptButton.getText().toString();
-                Log.e("Dept Selected","" + deptSelected);
+
                 proceedForm(eme_state,painArea, painLevel, deptSelected);
             }
         });

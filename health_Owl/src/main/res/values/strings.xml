@@ -151,4 +151,5 @@
     <string name="apptTitle">Appointments</string>
     <string name="switchO">Switch is ON</string>
     <string name="switchOf">Switch is OFF</string>
+    <string name="logout">Logout</string>
 </resources>

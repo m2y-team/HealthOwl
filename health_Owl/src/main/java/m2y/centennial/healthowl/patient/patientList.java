@@ -4,10 +4,14 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -24,7 +28,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import m2y.centennial.healthowl.HttpHandler;
+import m2y.centennial.healthowl.LoginActivity;
 import m2y.centennial.healthowl.R;
+import m2y.centennial.healthowl.appointment.MainAppointments;
 
 
 /**M2Y*/
@@ -33,6 +39,7 @@ public class patientList extends AppCompatActivity {
     public static final String TAG = patientList.class.getSimpleName();
     private ProgressDialog pDialog;
     ListView lv;
+    Toolbar myToolbar;
 
     private FloatingActionButton mAddPatient;
 
@@ -48,12 +55,45 @@ public class patientList extends AppCompatActivity {
 
         mAddPatient = (FloatingActionButton)findViewById(R.id.add_patient_button);
 
-        //Set up Menu with back button
-        Toolbar myDetailsToolbar = (Toolbar)findViewById(R.id.toolbar3);
-        setSupportActionBar(myDetailsToolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Patients");
+        //Set up Menu
+        initToolBar();
+
+        //Set up Bottom Bar
+        final BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottom_navigation);
+        bottomNavigationView.getMenu().getItem(0).setChecked(false);
+        bottomNavigationView.getMenu().getItem(1).setChecked(false);
+        bottomNavigationView.getMenu().getItem(2).setChecked(true);
+
+
+
+         bottomNavigationView.setOnNavigationItemSelectedListener(
+
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        Intent myAct = new Intent();
+                        switch (item.getItemId()) {
+                            case R.id.action_appointments:
+                                myAct = new Intent(findViewById(item.getItemId()).getContext(), MainAppointments.class);
+
+                                break;
+                            case R.id.action_patients:
+                                myAct = new Intent(findViewById(item.getItemId()).getContext(), patientList.class);
+
+
+
+
+                                break;
+                            case R.id.action_logout:
+                                myAct = new Intent(findViewById(item.getItemId()).getContext(), LoginActivity.class);
+                                break;
+
+                        }
+                        startActivity(myAct);
+                        return false;
+                    }
+                });
 
         contactList = new ArrayList<>();
 
@@ -240,6 +280,31 @@ public class patientList extends AppCompatActivity {
         Intent intent = new Intent(this, MainAddPatient1.class);
         intent.putExtra("pass", pass);
         startActivity(intent);
+    }
+
+    //Setting up toolbar
+    public void initToolBar() {
+        myToolbar = (Toolbar)findViewById(R.id.toolbar3);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setTitle("Health Owl");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

@@ -181,7 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnsave"
-                android:background="@android:color/holo_orange_light"
+                android:background="@color/colorPrimary"
                 android:textColor="@android:color/white"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp" />
