@@ -5,14 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -29,10 +25,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import m2y.centennial.healthowl.HttpHandler;
-import m2y.centennial.healthowl.LoginActivity;
 import m2y.centennial.healthowl.MainActivity;
 import m2y.centennial.healthowl.R;
-import m2y.centennial.healthowl.patient.patientList;
 
 public class MainAppointments extends AppCompatActivity {
 
@@ -42,12 +36,11 @@ public class MainAppointments extends AppCompatActivity {
     private ListView lv;
     Context context;
     private FloatingActionButton addAppointment;
-    Toolbar myToolbar;
 
     // URL to get contacts JSON
     private static String url = "https://m2y-healthowl.herokuapp.com/appointments";
 
-    //ArrayList<HashMap<String, String>> contactList;
+    ArrayList<HashMap<String, String>> contactList;
     ArrayList<HashMap<String, String>> appointmentList;
 
     @Override
@@ -55,47 +48,12 @@ public class MainAppointments extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_appointments);
 
-        //Set up Menu
-        initToolBar();
-
-        //Set up Bottom Bar
-        final BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.bottom_navigation);
-        bottomNavigationView.getMenu().getItem(0).setChecked(false);
-        bottomNavigationView.getMenu().getItem(1).setChecked(true);
-        bottomNavigationView.getMenu().getItem(2).setChecked(false);
-
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        Intent myAct = new Intent();
-                        switch (item.getItemId()) {
-                            case R.id.action_appointments:
-
-                                myAct = new Intent(findViewById(item.getItemId()).getContext(), MainAppointments.class);
-
-                                break;
-                            case R.id.action_patients:
-
-                                myAct = new Intent(findViewById(item.getItemId()).getContext(), patientList.class);
-
-
-                                break;
-                            case R.id.action_logout:
-                                myAct = new Intent(findViewById(item.getItemId()).getContext(), LoginActivity.class);
-                                break;
-
-                        }
-                        startActivity(myAct);
-                        return false;
-                    }
-                });
-
-
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.my_appointment_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Appointments");
+        context=this;
 
         // Add appointment Button
 //        appAppointment = (ImageButton) findViewById(R.id.addAppointment);
@@ -120,39 +78,13 @@ public class MainAppointments extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Click action
-                Intent intent = new Intent(context, Add_Appointment_Main1.class);
+                Intent intent = new Intent(context, AddAppointment.class);
                 startActivity(intent);
             }
         });
 
 
     }
-
-    //Setting up toolbar
-    public void initToolBar() {
-        myToolbar = (Toolbar)findViewById(R.id.my_appointment_toolbar);
-        setSupportActionBar(myToolbar);
-        getSupportActionBar().setTitle("Health Owl");
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.settings:
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
     /**
      * Async task class to get json by making HTTP call
      */
@@ -193,7 +125,15 @@ public class MainAppointments extends AppCompatActivity {
                         String patientName = c.getString("patientName");
                         String date = c.getString("date");
                         String time = c.getString("time");
-//                        String gender = c.getString("gender");
+                        String comments = c.getString("comments");
+                        String areaOfpain = c.getString("areaOfpain");
+                        String levelOfpain = c.getString("levelOfpain");
+                        String department = c.getString("department");
+                        String reason = c.getString("reason");
+                        String hbr = c.getString("hbr");
+                        String bp = c.getString("bp");
+                        String temperature = c.getString("temperature");
+                        String ohip = c.getString("ohip");
 
 
                         // tmp hash map for single contact
@@ -204,6 +144,17 @@ public class MainAppointments extends AppCompatActivity {
                         appointment.put("patientName", patientName);
                         appointment.put("date", date);
                         appointment.put("time", time);
+
+                        appointment.put("comments", comments);
+                        appointment.put("areaOfpain", areaOfpain);
+                        appointment.put("levelOfpain", levelOfpain);
+                        appointment.put("department", department);
+                        appointment.put("reason", reason);
+                        appointment.put("ohip", ohip);
+                        appointment.put("hbr", hbr);
+                        appointment.put("bp", bp);
+                        appointment.put("temperature", temperature);
+
 
                         // adding contact to contact list
                         appointmentList.add(appointment);
@@ -269,26 +220,46 @@ public class MainAppointments extends AppCompatActivity {
                     // ListView Clicked item value
                     //String itemValue = lv.getItemAtPosition(position).toString();
                     String itemValue = (String) map.get("patientName");
+                    String mComment = (String) map.get("comment");
+                    String mArea = (String) map.get("areaOfpain");
+                    String mLevel = (String) map.get("levelOfpain");
+                    String mDept = (String) map.get("department");
+                    String mReason = (String) map.get("reason");
+                    String mHbr = (String) map.get("hbr");
+                    String mBp = (String) map.get("bp");
+                    String mTemp = (String) map.get("temperature");
+                    String mOhip = (String) map.get("ohip");
+
 
                     // Show Alert
 //                    Toast.makeText(getApplicationContext(),
 //                            "Position :"+itemPosition+"  ListItem : " +"itemValue", Toast.LENGTH_LONG)
 //                            .show();
                     Log.i(TAG, "****************************");
-                    goNext(itemValue);
+                    goNext(itemValue, mComment, mArea, mLevel, mDept, mReason, mHbr, mBp, mTemp, mOhip);
 
                 }
 
-                private void goNext(String patientChoice){
-                    Intent intent = new Intent(MainAppointments.this, Add_Appointment_Main1.class);
+                private void goNext(String patientChoice, String mComment, String mArea, String mLevel, String mDept, String mReason, String mHbr, String mBp, String mTemp, String mOhip){
+                    Intent intent = new Intent(MainAppointments.this, App_detail.class);
                     intent.putExtra("patientChoice", patientChoice);
+
+                    intent.putExtra("comments", mComment);
+                    intent.putExtra("areaOfpain", mArea);
+                    intent.putExtra("levelOfPain", mLevel);
+                    intent.putExtra("dept", mDept);
+                    intent.putExtra("reason", mReason);
+                    intent.putExtra("heart", mHbr);
+                    intent.putExtra("blood", mBp);
+                    intent.putExtra("temp", mTemp);
+
+                    intent.putExtra("ohip", mOhip);
+
                     startActivity(intent);
                 }
 
             });
         }
-
-
     }
 
 }
