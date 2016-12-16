@@ -200,7 +200,15 @@ public class MainAppointments extends AppCompatActivity {
                         String patientName = c.getString("patientName");
                         String date = c.getString("date");
                         String time = c.getString("time");
-//                        String gender = c.getString("gender");
+                        String comments = c.getString("comments");
+                        String areaOfpain = c.getString("areaOfpain");
+                        String levelOfpain = c.getString("levelOfpain");
+                        String department = c.getString("department");
+                        String reason = c.getString("reason");
+                        String hbr = c.getString("hbr");
+                        String bp = c.getString("bp");
+                        String temperature = c.getString("temperature");
+                        String ohip = c.getString("ohip");
 
 
                         // tmp hash map for single contact
@@ -211,6 +219,17 @@ public class MainAppointments extends AppCompatActivity {
                         appointment.put("patientName", patientName);
                         appointment.put("date", date);
                         appointment.put("time", time);
+
+                        appointment.put("comments", comments);
+                        appointment.put("areaOfpain", areaOfpain);
+                        appointment.put("levelOfpain", levelOfpain);
+                        appointment.put("department", department);
+                        appointment.put("reason", reason);
+                        appointment.put("ohip", ohip);
+                        appointment.put("hbr", hbr);
+                        appointment.put("bp", bp);
+                        appointment.put("temperature", temperature);
+
 
                         // adding contact to contact list
                         appointmentList.add(appointment);
@@ -256,7 +275,7 @@ public class MainAppointments extends AppCompatActivity {
              * */
             ListAdapter adapter = new SimpleAdapter(
                     MainAppointments.this, appointmentList,
-                    R.layout.list_item, new String[]{"patientName","date","time"}, new int[]{R.id.patientName,R.id.date,R.id.time});
+                    R.layout.list_item, new String[]{"patientName","date","time"}, new int[]{R.id.patientName, R.id.date, R.id.time});
 
             lv.setAdapter(adapter);
 
@@ -276,19 +295,41 @@ public class MainAppointments extends AppCompatActivity {
                     // ListView Clicked item value
                     //String itemValue = lv.getItemAtPosition(position).toString();
                     String itemValue = (String) map.get("patientName");
+                    String mComment = (String) map.get("comment");
+                    String mArea = (String) map.get("areaOfpain");
+                    String mLevel = (String) map.get("levelOfpain");
+                    String mDept = (String) map.get("department");
+                    String mReason = (String) map.get("reason");
+                    String mHbr = (String) map.get("hbr");
+                    String mBp = (String) map.get("bp");
+                    String mTemp = (String) map.get("temperature");
+                    String mOhip = (String) map.get("ohip");
+
 
                     // Show Alert
 //                    Toast.makeText(getApplicationContext(),
 //                            "Position :"+itemPosition+"  ListItem : " +"itemValue", Toast.LENGTH_LONG)
 //                            .show();
                     Log.i(TAG, "****************************");
-                    goNext(itemValue);
+                    goNext(itemValue, mComment, mArea, mLevel, mDept, mReason, mHbr, mBp, mTemp, mOhip);
 
                 }
 
-                private void goNext(String patientChoice){
-                    Intent intent = new Intent(MainAppointments.this, AppTabs.class);
+                private void goNext(String patientChoice, String mComment, String mArea, String mLevel, String mDept, String mReason, String mHbr, String mBp, String mTemp, String mOhip){
+                    Intent intent = new Intent(MainAppointments.this, App_detail.class);
                     intent.putExtra("patientChoice", patientChoice);
+
+                    intent.putExtra("comments", mComment);
+                    intent.putExtra("areaOfpain", mArea);
+                    intent.putExtra("levelOfPain", mLevel);
+                    intent.putExtra("dept", mDept);
+                    intent.putExtra("reason", mReason);
+                    intent.putExtra("heart", mHbr);
+                    intent.putExtra("blood", mBp);
+                    intent.putExtra("temp", mTemp);
+
+                    intent.putExtra("ohip", mOhip);
+
                     startActivity(intent);
                 }
 
