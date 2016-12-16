@@ -116,6 +116,8 @@ public class MainAppointments extends AppCompatActivity {
 
         new GetContacts().execute();
 
+
+
         FloatingActionButton addAppointment = (FloatingActionButton) findViewById(R.id.addAppointment);
         addAppointment.setOnClickListener(new View.OnClickListener() {
             @Override

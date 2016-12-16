@@ -1,0 +1,14 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/myprogressrbar" android:oneshot="false">
+
+    <item android:drawable="@drawable/progress_one_ic" android:duration="100"/>
+    <item android:drawable="@drawable/progress_two_ic" android:duration="100"/>
+    <item android:drawable="@drawable/progress_three_ic" android:duration="100"/>
+    <item android:drawable="@drawable/progress_4_ic" android:duration="100"/>
+    <item android:drawable="@drawable/progress_5_ic" android:duration="100"/>
+    <item android:drawable="@drawable/progress_6_ic" android:duration="100"/>
+    <item android:drawable="@drawable/progress_7_ic" android:duration="100"/>
+    <item android:drawable="@drawable/progress_8_ic" android:duration="100"/>
+    <item android:drawable="@drawable/progress_9_ic" android:duration="100"/>
+
+</animation-list>

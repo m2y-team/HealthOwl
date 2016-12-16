@@ -11,9 +11,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:paddingTop="30dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="20dp"
+        android:paddingTop="40dp"
         android:background="@android:color/background_light">
 
 
@@ -100,33 +100,6 @@
                     android:paddingBottom="2dip"
                     android:textColor="@android:color/holo_red_light"
                     android:layout_weight="1"/>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-            >
-
-                <TextView
-                    android:text="@string/phone_no"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/phoneTV" />
-
-                <TextView
-                    android:id="@+id/addPhoneTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text=""
-                    android:paddingStart="30dp"
-                    android:paddingEnd="30dp"
-                    android:paddingBottom="2dip"
-                    android:textColor="@android:color/holo_red_light"
-                    android:layout_weight="1"/>
-
 
             </TableRow>
 

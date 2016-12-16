@@ -31,10 +31,8 @@ public class Information extends Fragment {
         String mGender= getActivity().getIntent().getStringExtra("gender");
         String mDOB= getActivity().getIntent().getStringExtra("dob");
         String mOhip= getActivity().getIntent().getStringExtra("ohip");
-        String mPhone= getActivity().getIntent().getStringExtra("phone");
+
         String mAddress= getActivity().getIntent().getStringExtra("address");
-
-
 
         gender = (TextView)view.findViewById(R.id.addGenderTV);
         Information.this.gender.setText(mGender);
@@ -44,9 +42,6 @@ public class Information extends Fragment {
 
         ohip = (TextView)view.findViewById(R.id.addInsuranceTV);
         Information.this.ohip.setText(mOhip);
-
-        phone = (TextView)view.findViewById(R.id.addPhoneTV);
-        Information.this.phone.setText(mPhone);
 
         address = (TextView)view.findViewById(R.id.otherAddressTV);
         Information.this.address.setText(mAddress);

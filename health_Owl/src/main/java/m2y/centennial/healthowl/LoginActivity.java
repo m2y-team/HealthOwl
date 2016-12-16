@@ -3,8 +3,9 @@ package m2y.centennial.healthowl;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.Context;
+import android.app.AlertDialog;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
@@ -17,9 +18,9 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -32,13 +33,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import m2y.centennial.healthowl.appointment.MainAppointments;
 
 /**
     M2Y*/
 public class LoginActivity extends AppCompatActivity implements OnClickListener {
+
+    CustomProgressDialog dialog;
 
     public static final String TAG = LoginActivity.class.getSimpleName();
     private static final String[] DUMMY_CREDENTIALS = new String[]{
@@ -62,6 +67,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
     private View mProgressView;
     private View mLoginFormView;
     private AutoCompleteTextView mEmailView;
+    ArrayList<HashMap<String, String>> contactList;
+    ArrayList<String> testList;
 
 
     @Override
@@ -83,7 +90,16 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPreferences.edit();
 
+        contactList = new ArrayList<>();
         saveLogin = loginPreferences.getBoolean("saveLogin", false);
+
+
+        //contactList = new ArrayList<>();
+        new LoginActivity.GetContacts().execute();
+        testList = new ArrayList<>();
+        //contactList.addAll(transitionHash.values());
+
+
         if (saveLogin == true) {
             mEmailView.setText(loginPreferences.getString("username", ""));
             editTextPassword.setText(loginPreferences.getString("password", ""));
@@ -111,8 +127,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
 
     public void onClick(View view) {
         if (view == ok) {
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(mEmailView.getWindowToken(), 0);
+
 
         username = mEmailView.getText().toString();
         password = editTextPassword.getText().toString();
@@ -131,49 +146,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         }
 
     }
-/*
-    private void populateAutoComplete() {
-        if (!mayRequestContacts()) {
-            return;
-        }
-        getLoaderManager().initLoader(0, null, this);
-    }
 
-    private boolean mayRequestContacts() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true;
-        }
-        if (checkSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        }
-        if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mEmailView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
-                    .setAction(android.R.string.ok, new View.OnClickListener() {
-                        @Override
-                        @TargetApi(Build.VERSION_CODES.M)
-                        public void onClick(View v) {
-                            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
-                        }
-                    });
-        } else {
-            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
-        }
-        return false;
-    }
-
-    /**
-     * Callback received when a permissions request has been completed.
-     */
-   /* @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        if (requestCode == REQUEST_READ_CONTACTS) {
-            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                populateAutoComplete();
-            }
-        }
-    }
-*/
 
     /**
      * Attempts to sign in or register the account specified by the login form.
@@ -198,6 +171,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+
             editTextPassword.setError(getString(R.string.error_invalid_password));
             focusView = editTextPassword;
             cancel = true;
@@ -221,19 +195,18 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
+            //custom animation
+
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
         }
     }
 
     private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
         return email.contains("@");
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
         return password.length() > 1;
     }
 
@@ -242,9 +215,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
-        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-        // for very easy animations. If available, use these APIs to fade-in
-        // the progress spinner.
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
@@ -343,7 +314,6 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
 
             try {
                 // Simulate network access.
@@ -360,7 +330,6 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                 }
             }
 
-            // TODO: register the new account here.
             return false;
         }
 
@@ -372,6 +341,9 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
 
             if (success) {
 
+                setContentView(R.layout.activity_login2);
+                dialog=new CustomProgressDialog(LoginActivity.this, 1);
+                dialog.show();
                 //Toast.makeText(LoginActivity.this, mEmailView.getText(),Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(LoginActivity.this, MainAppointments.class);
                 //intent.putExtra("key",mEmailView.getText().toString());
@@ -391,15 +363,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         }
     }
 
-
-
-
-
-
-
-
-
-
+    //this method get user name from edit text and check from our server
 
 
     /**
@@ -412,16 +376,20 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
 
+
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(url);
 
             Log.e(TAG, "Response from url: " + jsonStr);
 
+            ArrayList<String> Alist = null;
             if (jsonStr != null) {
                 try {
 
                     //JSONObject jsonObj = new JSONObject(jsonStr);
                     JSONArray contacts = new JSONArray(jsonStr);
+
+
 
                     // looping through All Contacts
                     for (int i = 0; i < contacts.length(); i++) {
@@ -432,12 +400,27 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                         String cred = login + ":" + password;
 
                         // tmp hash map for single contact
-                        ArrayList<String> list = new ArrayList<String>();
+                        HashMap<String, String> hashPd = new HashMap<>();
 
 
                         // adding each child node to HashMap key => value
+                        hashPd.put("cred", cred);
 
-                        list.add(cred);
+                        // tmp hash map for single contact
+                        Alist = new ArrayList<String>();
+
+                        // adding each child node to HashMap key => value
+
+
+                        contactList.add(hashPd);
+
+                        for(HashMap<String, String> contact : contactList) {
+                            for (Map.Entry<String,String> entry : contact.entrySet()) {
+                                Alist.add(entry.getValue());
+                            }
+
+                        }
+                        Log.e(TAG, Alist.getClass().getName());
 
                     }
                 } catch (final JSONException e) {
@@ -450,6 +433,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                                     Toast.LENGTH_LONG)
                                     .show();
                         }
+
+
                     });
 
                 }
@@ -465,7 +450,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                     }
                 });
             }
-
+            //Toast.makeText(LoginActivity.this, Alist.get(0), Toast.LENGTH_LONG).show();
+            //Log.i(TAG, "CredList -" + list);
             return null;
         }
 
@@ -474,4 +460,40 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
 
     }
 
-}
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exitByBackKey();
+
+            //moveTaskToBack(false);
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    protected void exitByBackKey() {
+
+        AlertDialog alertbox = new AlertDialog.Builder(this)
+                .setMessage("Do you want to exit application?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+                    // do something when the button is clicked
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                        finish();
+                        //close();
+
+
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+                    // do something when the button is clicked
+                    public void onClick(DialogInterface arg0, int arg1) {
+                    }
+                })
+                .show();
+
+    }
+
+    }

@@ -18,6 +18,8 @@ public class patientModel {
     private String mYear;
     private String mDob;
 
+    private String mEmail;
+
 
     public String getFName() {
         return mFName;
@@ -97,5 +99,13 @@ public class patientModel {
 
     public void setDob(String dob) {
         mDob = dob;
+    }
+
+    public String getEmail() {
+        return mEmail;
+    }
+
+    public void setEmail(String email) {
+        mEmail = email;
     }
 }

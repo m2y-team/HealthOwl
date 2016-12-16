@@ -29,6 +29,13 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone"/>
 
+    <ProgressBar
+        android:id="@+id/custom_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@drawable/progress_one_ic"
+        android:visibility="gone"/>
+
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"

@@ -119,4 +119,5 @@
     <string name="reason_for_a_visitG">Entrez Raison de la visite</string>
     <string name="addNewPatient2">Add New Patient (2/2)</string>
     <string name="logout">Logout</string>
+    <string name="enter_your_email">Enter your email</string>
 </resources>

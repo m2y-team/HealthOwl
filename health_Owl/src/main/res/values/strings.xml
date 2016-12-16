@@ -152,4 +152,5 @@
     <string name="switchO">Switch is ON</string>
     <string name="switchOf">Switch is OFF</string>
     <string name="logout">Logout</string>
+    <string name="enter_your_email">Enter your email</string>
 </resources>

@@ -60,6 +60,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
     private String addDay;
     private String addYear;
     private String addDob;
+    private String addEmail;
 
     private Toolbar mToolbar2;
     private ProgressBar tvIsConnected;
@@ -70,8 +71,10 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
 
     private EditText mDay;
     private EditText mYear;
+    private EditText mEmail;
     private TextInputLayout inputLayoutDay;
     private TextInputLayout inputLayoutYear;
+    private TextInputLayout inputLayoutEmail;
 
     patientModel person;
 
@@ -97,11 +100,14 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
         inputLayoutDay = (TextInputLayout)findViewById(R.id.input_layout_day);
         inputLayoutYear = (TextInputLayout)findViewById(R.id.input_layout_year);
 
+
         mDay=(EditText) findViewById(R.id.dayInput);
         mYear=(EditText) findViewById(R.id.yearInput);
+        mEmail=(EditText)findViewById(R.id.etemail);
 
         mDay.addTextChangedListener(new MainAddPatient2.MyTextWatcher(mDay));
         mYear.addTextChangedListener(new MainAddPatient2.MyTextWatcher(mYear));
+        mEmail.addTextChangedListener(new MainAddPatient2.MyTextWatcher(mEmail));
 
 
         //Get items from previous part of the form
@@ -111,6 +117,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
         addPhone = intent.getStringExtra(getString(R.string.phone));
         addAddress = intent.getStringExtra(getString(R.string.addressv));
         addOhip = intent.getStringExtra(getString(R.string.ohipv));
+
 
         //Toast.makeText(getApplicationContext(), fName+" "+lName+" "+phone+" "+address+" "+ohip, Toast.LENGTH_SHORT).show();
 
@@ -170,6 +177,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
             jsonObject.accumulate("healthInsuranceNumber", person.getOhip());
             jsonObject.accumulate("address", person.getAddress());
             jsonObject.accumulate("dateOfBirth", person.getDob());
+            jsonObject.accumulate("email", person.getEmail());
 
             // 4. convert JSONObject to JSON to String
             json = jsonObject.toString();
@@ -250,6 +258,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
                     addYear = mYear.getText().toString();
                     addDob = addMonth + " " + addDay + ", "+addYear;
                     //addName = addFName + addLName;
+                    addEmail = mEmail.getText().toString();
 
                     //Toast.makeText(getApplicationContext(), addFName+" "+addLName+" "+addPhone+" "+addAddress+" "+addOhip+" "+addGender+" "+addDob, Toast.LENGTH_SHORT).show();
                     //call AsynTask to perform network operation on separate thread
@@ -272,6 +281,7 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
             person.setOhip(addOhip);
             person.setGender(addGender);
             person.setDob(addDob);
+            person.setEmail(addEmail);
 
             return POST(urls[0],person);
         }
@@ -333,6 +343,9 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
                     break;
                 case R.id.input_layout_last_name:
                     validateYear();
+
+                case R.id.input_layout_email:
+                    validateEmail();
                     break;
             }
         }
@@ -357,6 +370,17 @@ public class MainAddPatient2 extends AppCompatActivity implements View.OnClickLi
             return false;
         } else {
             inputLayoutYear.setErrorEnabled(false);
+        }
+        return true;
+    }
+
+    private boolean validateEmail() {
+        if (mEmail.getText().toString().trim().isEmpty()) {
+            inputLayoutEmail.setError(getString(R.string.err_msg_fname));
+            requestFocus(mEmail);
+            return false;
+        } else {
+            inputLayoutEmail.setErrorEnabled(false);
         }
         return true;
     }
