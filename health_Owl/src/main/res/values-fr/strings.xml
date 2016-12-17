@@ -120,4 +120,6 @@
     <string name="addNewPatient2">Add New Patient (2/2)</string>
     <string name="logout">Logout</string>
     <string name="enter_your_email">Enter your email</string>
+    <string name="bloor_pressure">Bloor Pressure</string>
+    <string name="area_of_pain">Area of pain</string>
 </resources>

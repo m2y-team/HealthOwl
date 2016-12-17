@@ -153,4 +153,9 @@
     <string name="switchOf">Switch is OFF</string>
     <string name="logout">Logout</string>
     <string name="enter_your_email">Enter your email</string>
+    <string name="bloor_pressure">Bloor Pressure</string>
+    <string name="area_of_pain">Area of pain</string>
+    <string name="department1">Department</string>
+    <string name="reason_for_visit">Reason for visit</string>
+    <string name="tempreture">Tempreture</string>
 </resources>
