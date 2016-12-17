@@ -143,6 +143,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         }
 
         attemptLogin();
+            dialog=new CustomProgressDialog(LoginActivity.this, 1);
+            dialog.show();
         }
 
     }

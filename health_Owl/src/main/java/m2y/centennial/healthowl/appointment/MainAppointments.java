@@ -49,6 +49,7 @@ public class MainAppointments extends AppCompatActivity {
     private static String url = "https://m2y-healthowl.herokuapp.com/appointments";
 
     //ArrayList<HashMap<String, String>> contactList;
+    ArrayList<HashMap<String, String>> contactList;
     ArrayList<HashMap<String, String>> appointmentList;
 
     @Override
@@ -123,7 +124,7 @@ public class MainAppointments extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Click action
-                Intent intent = new Intent(context, AddAppointment.class);
+                Intent intent = new Intent(context, Add_Appointment_Main3.class);
                 startActivity(intent);
             }
         });
@@ -202,12 +203,12 @@ public class MainAppointments extends AppCompatActivity {
                         String time = c.getString("time");
                         String comments = c.getString("comments");
                         String areaOfpain = c.getString("areaOfpain");
-                        String levelOfpain = c.getString("levelOfpain");
+                        //String levelOfpain = c.getString("levelOfpain");
                         String department = c.getString("department");
                         String reason = c.getString("reason");
                         String hbr = c.getString("hbr");
                         String bp = c.getString("bp");
-                        String temperature = c.getString("temperature");
+                        //String temperature = c.getString("tempreture") ;
                         String ohip = c.getString("ohip");
 
 
@@ -222,13 +223,13 @@ public class MainAppointments extends AppCompatActivity {
 
                         appointment.put("comments", comments);
                         appointment.put("areaOfpain", areaOfpain);
-                        appointment.put("levelOfpain", levelOfpain);
+                        //appointment.put("levelOfpain", levelOfpain);
                         appointment.put("department", department);
                         appointment.put("reason", reason);
                         appointment.put("ohip", ohip);
                         appointment.put("hbr", hbr);
                         appointment.put("bp", bp);
-                        appointment.put("temperature", temperature);
+                        //appointment.put("tempreture", temperature);
 
 
                         // adding contact to contact list
@@ -297,13 +298,13 @@ public class MainAppointments extends AppCompatActivity {
                     String itemValue = (String) map.get("patientName");
                     String mComment = (String) map.get("comment");
                     String mArea = (String) map.get("areaOfpain");
-                    String mLevel = (String) map.get("levelOfpain");
+                    //String mLevel = (String) map.get("levelOfpain").toString();
                     String mDept = (String) map.get("department");
                     String mReason = (String) map.get("reason");
                     String mHbr = (String) map.get("hbr");
-                    String mBp = (String) map.get("bp");
-                    String mTemp = (String) map.get("temperature");
-                    String mOhip = (String) map.get("ohip");
+                    String mBp = (String) map.get("bp").toString();
+                    //String mTemp = (String) map.get("tempreture").toString();
+                    String mOhip = (String) map.get("ohip").toString();
 
 
                     // Show Alert
@@ -311,22 +312,22 @@ public class MainAppointments extends AppCompatActivity {
 //                            "Position :"+itemPosition+"  ListItem : " +"itemValue", Toast.LENGTH_LONG)
 //                            .show();
                     Log.i(TAG, "****************************");
-                    goNext(itemValue, mComment, mArea, mLevel, mDept, mReason, mHbr, mBp, mTemp, mOhip);
+                    goNext(itemValue, mComment, mArea, mDept, mReason, mHbr, mBp, /*mTemp*/ mOhip);
 
                 }
 
-                private void goNext(String patientChoice, String mComment, String mArea, String mLevel, String mDept, String mReason, String mHbr, String mBp, String mTemp, String mOhip){
+                private void goNext(String patientChoice, String mComment, String mArea, String mDept, String mReason, String mHbr, String mBp, /*String mTemp, */String mOhip){
                     Intent intent = new Intent(MainAppointments.this, App_detail.class);
                     intent.putExtra("patientChoice", patientChoice);
 
                     intent.putExtra("comments", mComment);
                     intent.putExtra("areaOfpain", mArea);
-                    intent.putExtra("levelOfPain", mLevel);
+                    //intent.putExtra("levelOfPain", mLevel);
                     intent.putExtra("dept", mDept);
                     intent.putExtra("reason", mReason);
                     intent.putExtra("heart", mHbr);
                     intent.putExtra("blood", mBp);
-                    intent.putExtra("temp", mTemp);
+                    //intent.putExtra("temp", mTemp);
 
                     intent.putExtra("ohip", mOhip);
 
@@ -334,9 +335,4 @@ public class MainAppointments extends AppCompatActivity {
                 }
 
             });
-        }
-
-
-    }
-
-}
+        }}}
